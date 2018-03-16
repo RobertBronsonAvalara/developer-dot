@@ -3878,7 +3878,7 @@
           {
             "name": "$include",
             "in": "query",
-            "description": "OPTIONAL: A comma separated list of special fetch options.  You can specify one or more of the following:\r\n            \r\n            * Customers - Retrieves the list of customers linked to the certificate.\r\n            * PoNumbers - Retrieves all PO numbers tied to the certificate.\r\n            * Attributes - Retrieves all attributes applied to the certificate.",
+            "description": "OPTIONAL: A comma separated list of special fetch options.  You can specify one or more of the following:\r\n            \r\n            \"Customers\" - Retrieves the list of customers linked to the certificate.\r\n            \"PoNumbers\" - Retrieves all PO numbers tied to the certificate.\r\n            \"Attributes\" - Retrieves all attributes applied to the certificate.",
             "required": false,
             "type": "string"
           },
