@@ -8,6 +8,7 @@ env:
     - staging_cloudfront=E1VB4YGCMCEIX2
     - prod_bucket=developer.avalara.com
     - prod_cloudfront=E14INHTPGUUPMC
+    - cloudfront_distro=default
 
 services:
   - docker
