@@ -1,0 +1,7 @@
+{
+    "home": "api-reference/trustfile/api",
+    "GetCompanies": "/api-reference/trustfile/api/methods/GetCompanies",
+    "GetItems": "/api-reference/trustfile/api/methods/GetItems",
+    "PostItems": "/api-reference/trustfile/api/methods/PostItems",
+    "Models": "/api-reference/trustfile/api/models"
+}

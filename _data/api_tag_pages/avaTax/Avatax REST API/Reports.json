@@ -1,0 +1,8 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "DownloadReport": "/api-reference/avatax/rest/v2/methods/Reports/DownloadReport",
+    "ExportDocumentLine": "/api-reference/avatax/rest/v2/methods/Reports/ExportDocumentLine",
+    "GetReport": "/api-reference/avatax/rest/v2/methods/Reports/GetReport",
+    "InitiateExportDocumentLineReport": "/api-reference/avatax/rest/v2/methods/Reports/InitiateExportDocumentLineReport",
+    "ListReports": "/api-reference/avatax/rest/v2/methods/Reports/ListReports"
+}

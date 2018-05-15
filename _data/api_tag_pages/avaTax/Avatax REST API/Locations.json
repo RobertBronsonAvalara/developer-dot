@@ -1,0 +1,10 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateLocations": "/api-reference/avatax/rest/v2/methods/Locations/CreateLocations",
+    "DeleteLocation": "/api-reference/avatax/rest/v2/methods/Locations/DeleteLocation",
+    "GetLocation": "/api-reference/avatax/rest/v2/methods/Locations/GetLocation",
+    "ListLocationsByCompany": "/api-reference/avatax/rest/v2/methods/Locations/ListLocationsByCompany",
+    "QueryLocations": "/api-reference/avatax/rest/v2/methods/Locations/QueryLocations",
+    "UpdateLocation": "/api-reference/avatax/rest/v2/methods/Locations/UpdateLocation",
+    "ValidateLocation": "/api-reference/avatax/rest/v2/methods/Locations/ValidateLocation"
+}

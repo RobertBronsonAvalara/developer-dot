@@ -10,7 +10,7 @@ doctype: blog
 disqus: 1
 ---
 
-*Updated March 22, 2018 - AvaTax REST has a new syntax for making LandedCost calculations. This post is retained for historical purposes. You may read about the new LandedCost integration at <a href="/blog/2018/03/13/calculate-customs-duties-in-rest/" target="_blank">https://developer.avalara.com/blog/2018/03/13/calculate-customs-duties-in-rest/</a>.*
+*Updated March 22, 2018 - AvaTax REST has a new syntax for making LandedCost calculations. This post is retained for historical purposes. You may read about the new LandedCost integration at <a href="/blog/2018/03/22/calculate-customs-duties-in-rest/" target="_blank">https://developer.avalara.com/blog/2018/03/22/calculate-customs-duties-in-rest/</a>.*
 
 <h2>Selling Cross-Border</h2>
 

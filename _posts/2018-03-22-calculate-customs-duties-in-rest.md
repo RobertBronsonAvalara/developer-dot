@@ -2,6 +2,7 @@
 layout: post
 title: How to Calculate Customs Duties in REST
 description: How to use REST to calculate landed costs using AvaTax REST API.
+relevantapimethods: ListCrossBorderCodes
 date: 2018-03-22 17:00
 author: Wayne Myer
 comments: true

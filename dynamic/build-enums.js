@@ -9,13 +9,12 @@ function writeHtml(dir, fileName, html) {
         if (err) {
             throw err;
         }
-        fs.writeFile(path.join(dir, `${fileName}.html`),
-            html,
-            (e) => {
-                if (e) {
-                    console.log(`\x1b[31mFailed to write enum ${fileName}: ${e} \x1b[0m`);
-                }
-            });
+
+        try {
+            fs.writeFileSync(path.join(dir, `${fileName}.html`), html);
+        } catch (e) {
+            console.log(`\x1b[31mFailed to write enum ${fileName}: ${e} \x1b[0m`);
+        }
     });
 }
 

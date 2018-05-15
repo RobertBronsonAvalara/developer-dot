@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateUPCs": "/api-reference/avatax/rest/v2/methods/Upcs/CreateUPCs",
+    "DeleteUPC": "/api-reference/avatax/rest/v2/methods/Upcs/DeleteUPC",
+    "GetUPC": "/api-reference/avatax/rest/v2/methods/Upcs/GetUPC",
+    "ListUPCsByCompany": "/api-reference/avatax/rest/v2/methods/Upcs/ListUPCsByCompany",
+    "QueryUPCs": "/api-reference/avatax/rest/v2/methods/Upcs/QueryUPCs",
+    "UpdateUPC": "/api-reference/avatax/rest/v2/methods/Upcs/UpdateUPC"
+}

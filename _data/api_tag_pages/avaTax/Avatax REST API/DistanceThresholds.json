@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateDistanceThreshold": "/api-reference/avatax/rest/v2/methods/DistanceThresholds/CreateDistanceThreshold",
+    "DeleteDistanceThreshold": "/api-reference/avatax/rest/v2/methods/DistanceThresholds/DeleteDistanceThreshold",
+    "GetDistanceThreshold": "/api-reference/avatax/rest/v2/methods/DistanceThresholds/GetDistanceThreshold",
+    "ListDistanceThresholds": "/api-reference/avatax/rest/v2/methods/DistanceThresholds/ListDistanceThresholds",
+    "QueryDistanceThresholds": "/api-reference/avatax/rest/v2/methods/DistanceThresholds/QueryDistanceThresholds",
+    "UpdateDistanceThreshold": "/api-reference/avatax/rest/v2/methods/DistanceThresholds/UpdateDistanceThreshold"
+}

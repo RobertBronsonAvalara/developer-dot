@@ -2,6 +2,7 @@
 layout: post
 title: Negative Transactions
 description: How does AvaTax handle transactions that go in different directions?
+relevantapimethods: CreateTransaction
 date: 2018-01-29 00:00
 author: Ted Spence
 comments: true

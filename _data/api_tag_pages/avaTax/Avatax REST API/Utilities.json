@@ -1,0 +1,6 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "GetMySubscription": "/api-reference/avatax/rest/v2/methods/Utilities/GetMySubscription",
+    "ListMySubscriptions": "/api-reference/avatax/rest/v2/methods/Utilities/ListMySubscriptions",
+    "Ping": "/api-reference/avatax/rest/v2/methods/Utilities/Ping"
+}

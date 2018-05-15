@@ -1,0 +1,7 @@
+{
+    "home": "api-reference/excise/5_18_0",
+    "login": "/api-reference/excise/5_18_0/methods/login",
+    "logout": "/api-reference/excise/5_18_0/methods/logout",
+    "processTransactions": "/api-reference/excise/5_18_0/methods/processTransactions",
+    "Models": "/api-reference/excise/5_18_0/models"
+}

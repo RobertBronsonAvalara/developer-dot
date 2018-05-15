@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateContacts": "/api-reference/avatax/rest/v2/methods/Contacts/CreateContacts",
+    "DeleteContact": "/api-reference/avatax/rest/v2/methods/Contacts/DeleteContact",
+    "GetContact": "/api-reference/avatax/rest/v2/methods/Contacts/GetContact",
+    "ListContactsByCompany": "/api-reference/avatax/rest/v2/methods/Contacts/ListContactsByCompany",
+    "QueryContacts": "/api-reference/avatax/rest/v2/methods/Contacts/QueryContacts",
+    "UpdateContact": "/api-reference/avatax/rest/v2/methods/Contacts/UpdateContact"
+}

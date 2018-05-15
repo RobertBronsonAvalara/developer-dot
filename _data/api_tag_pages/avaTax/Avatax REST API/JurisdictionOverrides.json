@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateJurisdictionOverrides": "/api-reference/avatax/rest/v2/methods/JurisdictionOverrides/CreateJurisdictionOverrides",
+    "DeleteJurisdictionOverride": "/api-reference/avatax/rest/v2/methods/JurisdictionOverrides/DeleteJurisdictionOverride",
+    "GetJurisdictionOverride": "/api-reference/avatax/rest/v2/methods/JurisdictionOverrides/GetJurisdictionOverride",
+    "ListJurisdictionOverridesByAccount": "/api-reference/avatax/rest/v2/methods/JurisdictionOverrides/ListJurisdictionOverridesByAccount",
+    "QueryJurisdictionOverrides": "/api-reference/avatax/rest/v2/methods/JurisdictionOverrides/QueryJurisdictionOverrides",
+    "UpdateJurisdictionOverride": "/api-reference/avatax/rest/v2/methods/JurisdictionOverrides/UpdateJurisdictionOverride"
+}

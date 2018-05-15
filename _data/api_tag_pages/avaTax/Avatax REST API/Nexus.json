@@ -1,0 +1,11 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateNexus": "/api-reference/avatax/rest/v2/methods/Nexus/CreateNexus",
+    "DeclareNexusByAddress": "/api-reference/avatax/rest/v2/methods/Nexus/DeclareNexusByAddress",
+    "DeleteNexus": "/api-reference/avatax/rest/v2/methods/Nexus/DeleteNexus",
+    "GetNexus": "/api-reference/avatax/rest/v2/methods/Nexus/GetNexus",
+    "GetNexusByFormCode": "/api-reference/avatax/rest/v2/methods/Nexus/GetNexusByFormCode",
+    "ListNexusByCompany": "/api-reference/avatax/rest/v2/methods/Nexus/ListNexusByCompany",
+    "QueryNexus": "/api-reference/avatax/rest/v2/methods/Nexus/QueryNexus",
+    "UpdateNexus": "/api-reference/avatax/rest/v2/methods/Nexus/UpdateNexus"
+}

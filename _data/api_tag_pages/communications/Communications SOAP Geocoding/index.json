@@ -1,0 +1,8 @@
+{
+    "home": "api-reference/communications/afc-geo",
+    "GeocodeAddress": "/api-reference/communications/afc-geo/methods/GeocodeAddress",
+    "GeocodeAllMatches": "/api-reference/communications/afc-geo/methods/GeocodeAllMatches",
+    "GeocodeLatLong": "/api-reference/communications/afc-geo/methods/GeocodeLatLong",
+    "GetServerTime": "/api-reference/communications/afc-geo/methods/GetServerTime",
+    "Models": "/api-reference/communications/afc-geo/models"
+}

@@ -1,0 +1,8 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "AccountResetLicenseKey": "/api-reference/avatax/rest/v2/methods/Accounts/AccountResetLicenseKey",
+    "ActivateAccount": "/api-reference/avatax/rest/v2/methods/Accounts/ActivateAccount",
+    "GetAccount": "/api-reference/avatax/rest/v2/methods/Accounts/GetAccount",
+    "GetAccountConfiguration": "/api-reference/avatax/rest/v2/methods/Accounts/GetAccountConfiguration",
+    "SetAccountConfiguration": "/api-reference/avatax/rest/v2/methods/Accounts/SetAccountConfiguration"
+}

@@ -1,0 +1,6 @@
+{
+    "home": "api-reference/avatax/account/soap",
+    "isAuthorized": "/api-reference/avatax/account/soap/methods/isAuthorized",
+    "ping": "/api-reference/avatax/account/soap/methods/ping",
+    "Models": "/api-reference/avatax/account/soap/models"
+}

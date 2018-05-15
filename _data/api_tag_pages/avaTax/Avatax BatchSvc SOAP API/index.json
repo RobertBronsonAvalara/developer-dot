@@ -1,0 +1,13 @@
+{
+    "home": "api-reference/avatax/batch/soap",
+    "batchDelete": "/api-reference/avatax/batch/soap/methods/batchDelete",
+    "batchFetch": "/api-reference/avatax/batch/soap/methods/batchFetch",
+    "batchFileDelete": "/api-reference/avatax/batch/soap/methods/batchFileDelete",
+    "batchFileFetch": "/api-reference/avatax/batch/soap/methods/batchFileFetch",
+    "batchFileSave": "/api-reference/avatax/batch/soap/methods/batchFileSave",
+    "batchProcess": "/api-reference/avatax/batch/soap/methods/batchProcess",
+    "batchSave": "/api-reference/avatax/batch/soap/methods/batchSave",
+    "isAuthorized": "/api-reference/avatax/batch/soap/methods/isAuthorized",
+    "ping": "/api-reference/avatax/batch/soap/methods/ping",
+    "Models": "/api-reference/avatax/batch/soap/models"
+}

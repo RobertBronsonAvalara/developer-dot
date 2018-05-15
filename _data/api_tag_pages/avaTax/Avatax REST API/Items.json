@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateItems": "/api-reference/avatax/rest/v2/methods/Items/CreateItems",
+    "DeleteItem": "/api-reference/avatax/rest/v2/methods/Items/DeleteItem",
+    "GetItem": "/api-reference/avatax/rest/v2/methods/Items/GetItem",
+    "ListItemsByCompany": "/api-reference/avatax/rest/v2/methods/Items/ListItemsByCompany",
+    "QueryItems": "/api-reference/avatax/rest/v2/methods/Items/QueryItems",
+    "UpdateItem": "/api-reference/avatax/rest/v2/methods/Items/UpdateItem"
+}

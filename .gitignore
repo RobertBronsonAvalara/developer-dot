@@ -23,6 +23,7 @@ selenium-debug.log
 npm-debug.log
 
 **/.DS_Store
+robots.txt
 
 # Ignore any models.json file that's built based on a swagger file
 dynamic/swagger/**/models.json

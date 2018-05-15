@@ -2,6 +2,7 @@
 layout: post
 title: What's a DocStatusError?
 description: A discussion of the AvaTax DocStatusError and how it affects your development.
+relevantapimethods: CreateTransaction
 date: 2017-03-03 15:00
 author: Mark Withers
 comments: true

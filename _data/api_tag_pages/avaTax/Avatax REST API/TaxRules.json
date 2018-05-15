@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateTaxRules": "/api-reference/avatax/rest/v2/methods/TaxRules/CreateTaxRules",
+    "DeleteTaxRule": "/api-reference/avatax/rest/v2/methods/TaxRules/DeleteTaxRule",
+    "GetTaxRule": "/api-reference/avatax/rest/v2/methods/TaxRules/GetTaxRule",
+    "ListTaxRules": "/api-reference/avatax/rest/v2/methods/TaxRules/ListTaxRules",
+    "QueryTaxRules": "/api-reference/avatax/rest/v2/methods/TaxRules/QueryTaxRules",
+    "UpdateTaxRule": "/api-reference/avatax/rest/v2/methods/TaxRules/UpdateTaxRule"
+}

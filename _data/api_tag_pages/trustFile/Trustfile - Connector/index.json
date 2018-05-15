@@ -1,0 +1,17 @@
+{
+    "home": "api-reference/trustfile/connector-microservice",
+    "DeleteConnection": "/api-reference/trustfile/connector-microservice/methods/DeleteConnection",
+    "GetBadItems": "/api-reference/trustfile/connector-microservice/methods/GetBadItems",
+    "GetConnectionActivities": "/api-reference/trustfile/connector-microservice/methods/GetConnectionActivities",
+    "GetConnectionAuthenticate": "/api-reference/trustfile/connector-microservice/methods/GetConnectionAuthenticate",
+    "GetConnectionDetail": "/api-reference/trustfile/connector-microservice/methods/GetConnectionDetail",
+    "GetConnections": "/api-reference/trustfile/connector-microservice/methods/GetConnections",
+    "GetConnector": "/api-reference/trustfile/connector-microservice/methods/GetConnector",
+    "GetConnectorHealth": "/api-reference/trustfile/connector-microservice/methods/GetConnectorHealth",
+    "GetErrors": "/api-reference/trustfile/connector-microservice/methods/GetErrors",
+    "HeadConnectionDetail": "/api-reference/trustfile/connector-microservice/methods/HeadConnectionDetail",
+    "PostConnection": "/api-reference/trustfile/connector-microservice/methods/PostConnection",
+    "PutConnection": "/api-reference/trustfile/connector-microservice/methods/PutConnection",
+    "PutConnector": "/api-reference/trustfile/connector-microservice/methods/PutConnector",
+    "Models": "/api-reference/trustfile/connector-microservice/models"
+}

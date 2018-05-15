@@ -2,6 +2,8 @@
 layout: post
 title: Customer Exemption Handling
 description: How should I mark items exempt using AvaTax?
+relevantapimethods: CreateTransaction
+relevantapimethods: 
 date: 2017-03-07 16:00
 author: Aaron Robles
 comments: true

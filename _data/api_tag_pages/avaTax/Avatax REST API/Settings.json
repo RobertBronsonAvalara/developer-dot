@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateSettings": "/api-reference/avatax/rest/v2/methods/Settings/CreateSettings",
+    "DeleteSetting": "/api-reference/avatax/rest/v2/methods/Settings/DeleteSetting",
+    "GetSetting": "/api-reference/avatax/rest/v2/methods/Settings/GetSetting",
+    "ListSettingsByCompany": "/api-reference/avatax/rest/v2/methods/Settings/ListSettingsByCompany",
+    "QuerySettings": "/api-reference/avatax/rest/v2/methods/Settings/QuerySettings",
+    "UpdateSetting": "/api-reference/avatax/rest/v2/methods/Settings/UpdateSetting"
+}

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: When to use batches
+relevantapimethods: CreateBatches
 date: 2018-04-09 17:00
 author: John Horsley
 comments: true

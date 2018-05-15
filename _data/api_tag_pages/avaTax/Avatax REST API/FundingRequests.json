@@ -1,0 +1,5 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "ActivateFundingRequest": "/api-reference/avatax/rest/v2/methods/FundingRequests/ActivateFundingRequest",
+    "FundingRequestStatus": "/api-reference/avatax/rest/v2/methods/FundingRequests/FundingRequestStatus"
+}

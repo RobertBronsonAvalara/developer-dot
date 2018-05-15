@@ -1,0 +1,6 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateCertExpressInvitation": "/api-reference/avatax/rest/v2/methods/CertExpressInvites/CreateCertExpressInvitation",
+    "GetCertExpressInvitation": "/api-reference/avatax/rest/v2/methods/CertExpressInvites/GetCertExpressInvitation",
+    "ListCertExpressInvitations": "/api-reference/avatax/rest/v2/methods/CertExpressInvites/ListCertExpressInvitations"
+}

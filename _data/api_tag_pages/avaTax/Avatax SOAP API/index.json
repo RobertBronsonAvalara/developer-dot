@@ -1,0 +1,15 @@
+{
+    "home": "api-reference/avatax/soap",
+    "adjustTax": "/api-reference/avatax/soap/methods/adjustTax",
+    "applyPayment": "/api-reference/avatax/soap/methods/applyPayment",
+    "cancelTax": "/api-reference/avatax/soap/methods/cancelTax",
+    "commitTax": "/api-reference/avatax/soap/methods/commitTax",
+    "getTax": "/api-reference/avatax/soap/methods/getTax",
+    "getTaxHistory": "/api-reference/avatax/soap/methods/getTaxHistory",
+    "isAuthorized": "/api-reference/avatax/soap/methods/isAuthorized",
+    "ping": "/api-reference/avatax/soap/methods/ping",
+    "postTax": "/api-reference/avatax/soap/methods/postTax",
+    "reconcileTaxHistory": "/api-reference/avatax/soap/methods/reconcileTaxHistory",
+    "validateAddress": "/api-reference/avatax/soap/methods/validateAddress",
+    "Models": "/api-reference/avatax/soap/models"
+}

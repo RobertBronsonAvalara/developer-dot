@@ -1,0 +1,13 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "ChangePassword": "/api-reference/avatax/rest/v2/methods/Registrar/ChangePassword",
+    "CreateAccount": "/api-reference/avatax/rest/v2/methods/Registrar/CreateAccount",
+    "CreateSubscriptions": "/api-reference/avatax/rest/v2/methods/Registrar/CreateSubscriptions",
+    "DeleteAccount": "/api-reference/avatax/rest/v2/methods/Registrar/DeleteAccount",
+    "DeleteSubscription": "/api-reference/avatax/rest/v2/methods/Registrar/DeleteSubscription",
+    "DeleteUser": "/api-reference/avatax/rest/v2/methods/Registrar/DeleteUser",
+    "QueryAccounts": "/api-reference/avatax/rest/v2/methods/Registrar/QueryAccounts",
+    "ResetPassword": "/api-reference/avatax/rest/v2/methods/Registrar/ResetPassword",
+    "UpdateAccount": "/api-reference/avatax/rest/v2/methods/Registrar/UpdateAccount",
+    "UpdateSubscription": "/api-reference/avatax/rest/v2/methods/Registrar/UpdateSubscription"
+}

@@ -1,0 +1,21 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateNoticeComment": "/api-reference/avatax/rest/v2/methods/Notices/CreateNoticeComment",
+    "CreateNoticeFinanceDetails": "/api-reference/avatax/rest/v2/methods/Notices/CreateNoticeFinanceDetails",
+    "CreateNoticeResponsibilities": "/api-reference/avatax/rest/v2/methods/Notices/CreateNoticeResponsibilities",
+    "CreateNoticeRootCauses": "/api-reference/avatax/rest/v2/methods/Notices/CreateNoticeRootCauses",
+    "CreateNotices": "/api-reference/avatax/rest/v2/methods/Notices/CreateNotices",
+    "DeleteNotice": "/api-reference/avatax/rest/v2/methods/Notices/DeleteNotice",
+    "DeleteResponsibilities": "/api-reference/avatax/rest/v2/methods/Notices/DeleteResponsibilities",
+    "DeleteRootCauses": "/api-reference/avatax/rest/v2/methods/Notices/DeleteRootCauses",
+    "DownloadNoticeAttachment": "/api-reference/avatax/rest/v2/methods/Notices/DownloadNoticeAttachment",
+    "GetNotice": "/api-reference/avatax/rest/v2/methods/Notices/GetNotice",
+    "GetNoticeComments": "/api-reference/avatax/rest/v2/methods/Notices/GetNoticeComments",
+    "GetNoticeFinanceDetails": "/api-reference/avatax/rest/v2/methods/Notices/GetNoticeFinanceDetails",
+    "GetNoticeResponsibilities": "/api-reference/avatax/rest/v2/methods/Notices/GetNoticeResponsibilities",
+    "GetNoticeRootCauses": "/api-reference/avatax/rest/v2/methods/Notices/GetNoticeRootCauses",
+    "ListNoticesByCompany": "/api-reference/avatax/rest/v2/methods/Notices/ListNoticesByCompany",
+    "QueryNotices": "/api-reference/avatax/rest/v2/methods/Notices/QueryNotices",
+    "UpdateNotice": "/api-reference/avatax/rest/v2/methods/Notices/UpdateNotice",
+    "UploadAttachment": "/api-reference/avatax/rest/v2/methods/Notices/UploadAttachment"
+}

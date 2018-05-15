@@ -1,0 +1,10 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateUsers": "/api-reference/avatax/rest/v2/methods/Users/CreateUsers",
+    "GetUser": "/api-reference/avatax/rest/v2/methods/Users/GetUser",
+    "GetUserEntitlements": "/api-reference/avatax/rest/v2/methods/Users/GetUserEntitlements",
+    "GetUsername": "/api-reference/avatax/rest/v2/methods/Users/GetUsername",
+    "ListUsersByAccount": "/api-reference/avatax/rest/v2/methods/Users/ListUsersByAccount",
+    "QueryUsers": "/api-reference/avatax/rest/v2/methods/Users/QueryUsers",
+    "UpdateUser": "/api-reference/avatax/rest/v2/methods/Users/UpdateUser"
+}

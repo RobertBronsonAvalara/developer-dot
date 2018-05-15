@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateBatches": "/api-reference/avatax/rest/v2/methods/Batches/CreateBatches",
+    "DeleteBatch": "/api-reference/avatax/rest/v2/methods/Batches/DeleteBatch",
+    "DownloadBatch": "/api-reference/avatax/rest/v2/methods/Batches/DownloadBatch",
+    "GetBatch": "/api-reference/avatax/rest/v2/methods/Batches/GetBatch",
+    "ListBatchesByCompany": "/api-reference/avatax/rest/v2/methods/Batches/ListBatchesByCompany",
+    "QueryBatches": "/api-reference/avatax/rest/v2/methods/Batches/QueryBatches"
+}

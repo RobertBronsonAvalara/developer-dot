@@ -1,0 +1,6 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "BuildTaxContentFile": "/api-reference/avatax/rest/v2/methods/TaxContent/BuildTaxContentFile",
+    "BuildTaxContentFileForLocation": "/api-reference/avatax/rest/v2/methods/TaxContent/BuildTaxContentFileForLocation",
+    "DownloadTaxRatesByZipCode": "/api-reference/avatax/rest/v2/methods/TaxContent/DownloadTaxRatesByZipCode"
+}

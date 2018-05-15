@@ -2,6 +2,7 @@
 layout: post
 title: Lifecycle of a Transaction
 description: How does a transaction begin its life, and how does it change over time?
+relevantapimethods: CreateTransaction, CommitTransaction, VerifyTransaction, VoidTransaction, AdjustTransaction
 date: 2017-01-23 17:00
 author: Ted Spence
 comments: true

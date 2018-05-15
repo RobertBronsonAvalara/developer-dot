@@ -1,0 +1,6 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "GetSubscription": "/api-reference/avatax/rest/v2/methods/Subscriptions/GetSubscription",
+    "ListSubscriptionsByAccount": "/api-reference/avatax/rest/v2/methods/Subscriptions/ListSubscriptionsByAccount",
+    "QuerySubscriptions": "/api-reference/avatax/rest/v2/methods/Subscriptions/QuerySubscriptions"
+}

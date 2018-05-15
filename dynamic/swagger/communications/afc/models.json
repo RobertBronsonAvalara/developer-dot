@@ -1,0 +1,6450 @@
+{
+  "Header": {
+    "description": "The SOAP API uses standard security to authenticate the account or user.",
+    "required": [
+      "Security"
+    ],
+    "properties": {
+      "Security": {
+        "$ref": "#/definitions/Security"
+      }
+    },
+    "xml": {
+      "name": "Header",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "Security": {
+    "description": "SOAP element containing authentication strategy.",
+    "required": [
+      "UsernameToken"
+    ],
+    "properties": {
+      "UsernameToken": {
+        "$ref": "#/definitions/UsernameToken"
+      }
+    },
+    "xml": {
+      "name": "Security",
+      "prefix": "o",
+      "namespace": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+    },
+    "x-methods-used-in": []
+  },
+  "UsernameToken": {
+    "description": "SOAP element containing username and password.",
+    "required": [
+      "Username",
+      "Password"
+    ],
+    "properties": {
+      "Username": {
+        "type": "string",
+        "description": "Username for accessing service.",
+        "xml": {
+          "name": "Username",
+          "prefix": "o"
+        }
+      },
+      "Password": {
+        "type": "string",
+        "description": "Password for accessing service.",
+        "xml": {
+          "name": "Password",
+          "prefix": "o"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "HeaderResp": {
+    "description": "The SOAP API uses standard security to authenticate the account or user.",
+    "properties": {
+      "Security": {
+        "$ref": "#/definitions/SecurityResp"
+      }
+    },
+    "xml": {
+      "name": "Header",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "SecurityResp": {
+    "description": "SOAP element containing response certification information.",
+    "required": [
+      "Timestamp"
+    ],
+    "properties": {
+      "Timestamp": {
+        "$ref": "#/definitions/TimestampResp"
+      }
+    },
+    "xml": {
+      "name": "Security",
+      "prefix": "o",
+      "namespace": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+    },
+    "x-methods-used-in": []
+  },
+  "TimestampResp": {
+    "description": "SOAP element containing time and date stamp.",
+    "properties": {
+      "Created": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Creation time and date.",
+        "xml": {
+          "name": "Created",
+          "prefix": "o"
+        }
+      },
+      "Expires": {
+        "type": "string",
+        "description": "Expiration time and date.",
+        "xml": {
+          "name": "Expires",
+          "prefix": "o"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "BadRequest": {
+    "description": "IIS rejection - Insure schemas match binding and that prefixes are matched.",
+    "type": "string",
+    "x-methods-used-in": [
+      "BeginCustomerBatch",
+      "CalcAdjWithFipsCode",
+      "CalcAdjWithNpaNxx",
+      "CalcAdjWithOverrides",
+      "CalcAdjWithPCode",
+      "CalcAdjWithZipAddress",
+      "CalcCustAdj",
+      "CalcCustTaxes",
+      "CalcJurisdiction",
+      "CalcProRatedAdj",
+      "CalcProRatedTaxes",
+      "CalcReverseAdjWithFipsCode",
+      "CalcReverseAdjWithNpaNxx",
+      "CalcReverseAdjWithPCode",
+      "CalcReverseAdjWithZipCode",
+      "CalcReverseTaxesWithFipsCode",
+      "CalcReverseTaxesWithNpaNxx",
+      "CalcReverseTaxesWithPCode",
+      "CalcReverseTaxesWithZipAddress",
+      "CalcTaxesInCustMode",
+      "CalcTaxesWithFipsCode",
+      "CalcTaxesWithNpaNxx",
+      "CalcTaxesWithOverrides",
+      "CalcTaxesWithPCode",
+      "CalcTaxesWithZipAddress",
+      "CreateReport",
+      "FipsToPCode",
+      "GetAddress",
+      "GetEZTaxDbVersion",
+      "GetEZTaxVersion",
+      "GetOptionalFieldKeyDesc",
+      "GetServerTime",
+      "GetTaxCategory",
+      "GetTaxDescription",
+      "GetTaxRates",
+      "GetVersion",
+      "NpaNxxToPCode",
+      "PCodeToFips",
+      "ProcessCustomerBatch",
+      "UpdateOptionalFieldKeyDesc",
+      "ZipToPCode"
+    ]
+  },
+  "CategoryExemption": {
+    "description": "Category Exemption Class",
+    "required": [
+      "TaxCategory"
+    ],
+    "type": "object",
+    "properties": {
+      "CountryISO": {
+        "description": "Three-character country ISO code. Required if State is not specified.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "State": {
+        "description": "Two-character state abbreviation. Required if CountryISO is not specified.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "TaxCategory": {
+        "format": "int32",
+        "description": "Valid tax category ID",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "custBatchId": {
+    "type": "number",
+    "format": "integer",
+    "xml": {
+      "prefix": "tem"
+    },
+    "x-methods-used-in": []
+  },
+  "CustomerTaxData": {
+    "description": "Customer taxes when using Customer Mode.",
+    "type": "object",
+    "properties": {
+      "CalculationType": {
+        "format": "int32",
+        "description": "Calculation type. Please see CalculationType in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "CategoryDescription": {
+        "description": "Tax category description.",
+        "type": "string",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "CategoryID": {
+        "format": "int32",
+        "description": "Tax category ID.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Description": {
+        "description": "Tax description.",
+        "type": "string",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "ExcessTax": {
+        "format": "double",
+        "description": "Rate for amount above max base.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "ExemptSaleAmount": {
+        "format": "double",
+        "description": "Amount of the charge exempt from taxes.",
+        "type": "number"
+      },
+      "Lines": {
+        "format": "int32",
+        "description": "Number of lines used to calculate the tax (for per-line tax calculations).",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Locations": {
+        "format": "int32",
+        "description": "Sum of locations from customer input.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "MaxBase": {
+        "format": "double",
+        "description": "Max amount to which tax is applied.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "MinBase": {
+        "format": "double",
+        "description": "Min amount to which tax is applied.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Minutes": {
+        "format": "double",
+        "description": "Number of minutes used to calculate the tax (for per-minute tax calculations).",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "PCode": {
+        "format": "int32",
+        "description": "PCode for the reporting jurisdiction.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Rate": {
+        "format": "double",
+        "description": "Tax rate.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Surcharge": {
+        "format": "int32",
+        "description": "Indicates if tax is considered a surcharge.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxAmount": {
+        "format": "double",
+        "description": "Tax amount.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxLevel": {
+        "format": "int32",
+        "description": "Tax level. \"Please see 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Tax Levels.\"",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxType": {
+        "format": "int32",
+        "description": "One of the Avalara tax types.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TotalCharge": {
+        "format": "double",
+        "description": "Sum of charges for this customer.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "Exclusion": {
+    "xml": {
+      "namespace": "xmlns:ezt2=\"http://schemas.datacontract.org/2004/07/EZTaxWebService\"",
+      "prefix": "ezt"
+    },
+    "description": "Exclusions Class",
+    "required": [
+      "CountryISO",
+      "ExclusionOn",
+      "State"
+    ],
+    "properties": {
+      "CountryISO": {
+        "description": "Three-character country ISO code. Required if State not specified.",
+        "type": "string"
+      },
+      "State": {
+        "description": "Two-character state abbreviation. Required if CountryISO not specified.",
+        "type": "string"
+      },
+      "ExclusionOn": {
+        "description": "True if entity exclusion applies in the state, otherwise false.",
+        "type": "boolean"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "InternalServerError": {
+    "required": [
+      "Fault"
+    ],
+    "properties": {
+      "Fault": {
+        "$ref": "#/definitions/InternalServerError > Fault"
+      }
+    },
+    "x-methods-used-in": [
+      "BeginCustomerBatch",
+      "CalcAdjWithFipsCode",
+      "CalcAdjWithNpaNxx",
+      "CalcAdjWithOverrides",
+      "CalcAdjWithPCode",
+      "CalcAdjWithZipAddress",
+      "CalcCustAdj",
+      "CalcCustTaxes",
+      "CalcJurisdiction",
+      "CalcProRatedAdj",
+      "CalcProRatedTaxes",
+      "CalcReverseAdjWithFipsCode",
+      "CalcReverseAdjWithNpaNxx",
+      "CalcReverseAdjWithPCode",
+      "CalcReverseAdjWithZipCode",
+      "CalcReverseTaxesWithFipsCode",
+      "CalcReverseTaxesWithNpaNxx",
+      "CalcReverseTaxesWithPCode",
+      "CalcReverseTaxesWithZipAddress",
+      "CalcTaxesInCustMode",
+      "CalcTaxesWithFipsCode",
+      "CalcTaxesWithNpaNxx",
+      "CalcTaxesWithOverrides",
+      "CalcTaxesWithPCode",
+      "CalcTaxesWithZipAddress",
+      "CreateReport",
+      "FipsToPCode",
+      "GetAddress",
+      "GetEZTaxDbVersion",
+      "GetEZTaxVersion",
+      "GetOptionalFieldKeyDesc",
+      "GetServerTime",
+      "GetTaxCategory",
+      "GetTaxDescription",
+      "GetTaxRates",
+      "GetVersion",
+      "NpaNxxToPCode",
+      "PCodeToFips",
+      "ProcessCustomerBatch",
+      "UpdateOptionalFieldKeyDesc",
+      "ZipToPCode"
+    ]
+  },
+  "FaultDetail": {
+    "xml": {
+      "name": "detail"
+    },
+    "properties": {
+      "ExceptionDetail": {
+        "$ref": "#/definitions/FaultDetail > ExceptionDetail"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "Nexus": {
+    "description": "Please see 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for details.",
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "OptionalField": {
+    "description": "Data structure used to provide optional alphanumeric data for transactions.",
+    "required": [
+      "OptionalKeyNo",
+      "OptionalValue"
+    ],
+    "type": "object",
+    "properties": {
+      "OptionalKeyNo": {
+        "format": "int32",
+        "description": "Key number (1 to 10) for optional field.",
+        "type": "integer"
+      },
+      "OptionalValue": {
+        "description": "Optional field value.",
+        "type": "string"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "OptionalKeyData": {
+    "description": "Data structure used to provide optional alphanumeric data for transactions.",
+    "type": "object",
+    "xml": {
+      "prefix": "Request: ezt, Response: a"
+    },
+    "required": [
+      "OptionalKeyDesc",
+      "OptionalKeyNo"
+    ],
+    "properties": {
+      "OptionalKeyDesc": {
+        "description": "Optional field value.",
+        "type": "string",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      },
+      "OptionalKeyNo": {
+        "format": "int32",
+        "description": "Key number (1 to 10) for optional field.",
+        "type": "integer",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "OverrideList": {
+    "xml": {
+      "namespace": "xmlns:ezt1=\"http://schemas.datacontract.org/2004/07/EZTaxWebService.WrapperClasses\"",
+      "prefix": "a"
+    },
+    "required": [
+      "TaxRateOverrideInfo"
+    ],
+    "properties": {
+      "TaxRateOverrideInfo": {
+        "$ref": "#/definitions/TaxRateOverrideInfo"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "TaxRateOverrideInfo": {
+    "xml": {
+      "prefix": "a"
+    },
+    "required": [
+      "LevelExemptible",
+      "Pcode",
+      "Scope",
+      "BracketInfo",
+      "TaxLevel",
+      "TaxType"
+    ],
+    "properties": {
+      "BracketInfo": {
+        "description": "Tax rate/bracket information.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxBracket"
+        }
+      },
+      "LevelExemptible": {
+        "description": "Indicates if the tax can be exempted using level exemptions.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Pcode": {
+        "format": "int32",
+        "description": "Jurisdiction PCode for this tax rate override.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Scope": {
+        "format": "int32",
+        "description": "Scope for override.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxLevel": {
+        "format": "int32",
+        "description": "Tax level. \"Please see 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Tax Levels.\"",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxType": {
+        "format": "int32",
+        "description": "One of the Avalara tax types.",
+        "type": "integer",
+        "xml": {
+          "prefix": "a"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "TaxBracket": {
+    "description": "Array of Tax Bracket Information structures.",
+    "required": [
+      "TaxBracketInfo"
+    ],
+    "properties": {
+      "TaxBracketInfo": {
+        "$ref": "#/definitions/TaxBracketInfo"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "TaxBracketInfo": {
+    "description": "Tax Bracket Info",
+    "required": [
+      "Rate",
+      "MaxBase"
+    ],
+    "type": "object",
+    "xml": {
+      "prefix": "a"
+    },
+    "properties": {
+      "CountyOverrideOn": {
+        "description": "For sales and use taxes only (tax types 1 and 49), indicates that this tax replaces the tax at the county level.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "CountyOverrideTax": {
+        "format": "double",
+        "description": "For sales and use taxes only (tax types 1 and 49), overrides the rate for the tax at the county level.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "MaxBase": {
+        "format": "double",
+        "description": "Maximum base that this rate applies to.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Rate": {
+        "format": "double",
+        "description": "Tax rate. Value cannot be negative. For rated taxes, value must be from 0 to 1. Otherwise, value may be larger.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "StateOverrideOn": {
+        "description": "For sales and use taxes only (tax types 1 and 49) indicates that this tax replaces the tax at the state level.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "StateOverrideTax": {
+        "format": "double",
+        "description": "For sales and use taxes only (tax types 1 and 49), overrides the rate for the tax at the state level.",
+        "type": "number",
+        "xml": {
+          "prefix": "a"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "TaxData": {
+    "description": "Zero or more array elements containing tax data.",
+    "type": "object",
+    "xml": {
+      "prefix": "a"
+    },
+    "properties": {
+      "AdjustmentType": {
+        "type": "integer",
+        "format": "int32",
+        "description": "0 if not an adjustment, otherwise one of the DiscountType enums based on user input. Please see 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of Discount Types.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Billable": {
+        "type": "boolean",
+        "description": "Indicates if the tax is billable to the customer.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "CalculationType": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Calculation type. Please see CalculationType in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "CategoryDescription": {
+        "type": "string",
+        "description": "Tax Category Description.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "CategoryID": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Tax category ID.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "CompanyIdentifier": {
+        "type": "string",
+        "description": "Customer identifier from transaction input.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Compliance": {
+        "type": "boolean",
+        "description": "Indicates if the tax is reportable to the jurisdiction."
+      },
+      "CustomerNumber": {
+        "type": "string",
+        "description": "User-defined customer number.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Description": {
+        "type": "string",
+        "description": "Tax description.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "ExemptSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "description": "Amount of the charge exempt from taxes.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "ExemptionType": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Set to 0 - reserved for future use. See ExemptionType under TaxData in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf'.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "InvoiceNumber": {
+        "type": "integer",
+        "format": "int32",
+        "description": "User-defined invoice number.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Lines": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Number of lines used to calculate the tax (for per-line tax calculations).",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Locations": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Number of locations from transaction input.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Minutes": {
+        "type": "number",
+        "format": "double",
+        "description": "Number of minutes used to calculate the tax (for per-minute tax calculations).",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional10": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional4": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional5": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional6": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional7": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional8": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Optional9": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "OptionalAlpha1": {
+        "description": "Optional user-defined string value.",
+        "type": "string",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "OptionalFields": {
+        "description": "User-defined list of optional alphanumeric fields.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/OptionalField"
+        },
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "PCode": {
+        "type": "integer",
+        "format": "int32",
+        "description": "PCode for the reporting jurisdiction.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Rate": {
+        "type": "number",
+        "format": "double",
+        "description": "Tax rate.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "RefundUncollect": {
+        "type": "number",
+        "format": "double",
+        "description": "Taxable measure if tax is smaller than 0 (tax adjustments).",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "ServiceLevelNumber": {
+        "type": "integer",
+        "format": "int32",
+        "description": "User-defined service level number.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "Surcharge": {
+        "type": "boolean",
+        "description": "Indicates if tax is considered a surcharge.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxAmount": {
+        "type": "number",
+        "format": "double",
+        "description": "Calculated tax amount.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxLevel": {
+        "type": "integer",
+        "format": "int32",
+        "description": "Tax level. \"Please see 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Tax Levels.\"",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxType": {
+        "type": "integer",
+        "format": "int32",
+        "description": "One of the Avalara tax types.",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxableMeasure": {
+        "type": "number",
+        "format": "double",
+        "description": "Amount of sale subject to tax plus any taxed taxes."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "TaxExemption": {
+    "description": "Tax Exemption class",
+    "required": [
+      "PCode",
+      "TaxLevel",
+      "TaxType"
+    ],
+    "type": "object",
+    "properties": {
+      "PCode": {
+        "format": "int32",
+        "description": "PCode for jurisdiction to exempt.",
+        "type": "integer"
+      },
+      "TaxLevel": {
+        "format": "int32",
+        "description": "Tax level. \"Please see 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Tax Levels.\"",
+        "type": "integer"
+      },
+      "TaxType": {
+        "format": "int32",
+        "description": "One of the Avalara tax types.",
+        "type": "integer"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "TaxRateInfo": {
+    "description": "Tax Rate Info Class",
+    "required": [
+      "RateHistory",
+      "TaxLevel",
+      "TaxType"
+    ],
+    "type": "object",
+    "xml": {
+      "prefix": "a"
+    },
+    "properties": {
+      "RateHistory": {
+        "description": "Tax rate history.",
+        "type": "array",
+        "xml": {
+          "prefix": "a"
+        },
+        "items": {
+          "$ref": "#/definitions/TaxRateHistory"
+        }
+      },
+      "TaxLevel": {
+        "description": "Tax level. \"Please see 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Tax Levels.\"",
+        "type": "integer",
+        "format": "int32",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "TaxType": {
+        "description": "One of the Avalara tax types.",
+        "type": "integer",
+        "format": "int32",
+        "xml": {
+          "prefix": "a"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "TaxRateHistory": {
+    "description": "Tax Rate History Class",
+    "required": [
+      "BracketInfo",
+      "EffectiveDate"
+    ],
+    "type": "object",
+    "xml": {
+      "prefix": "a"
+    },
+    "properties": {
+      "BracketInfo": {
+        "description": "Tax rate/bracket information.",
+        "type": "array",
+        "xml": {
+          "prefix": "a"
+        },
+        "items": {
+          "$ref": "#/definitions/TaxBracketInfo"
+        }
+      },
+      "EffectiveDate": {
+        "description": "Effective date for rate.",
+        "type": "string",
+        "format": "date-time",
+        "xml": {
+          "prefix": "a"
+        }
+      },
+      "LevelExemptible": {
+        "description": "Indicates if the tax can be exempted using level exemptions.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "a"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "Transaction": {
+    "description": "Note: Only select one from each of the BillTo, Origination and Termination options.",
+    "xml": {
+      "namespace": " xmlns:ezt=\"http://schemas.datacontract.org/2004/07/EZTaxWebService\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"",
+      "prefix": "tem"
+    },
+    "required": [
+      "BillToAddress",
+      "BillToFipsCode",
+      "BillToPCode",
+      "BillToNpaNxx",
+      "BusinessClass",
+      "Charge",
+      "CustomerType",
+      "Date",
+      "OriginationAddress",
+      "OriginationFipsCode",
+      "OriginationPCode",
+      "OriginationNpaNxx",
+      "Sale",
+      "ServiceClass",
+      "ServiceType",
+      "TerminationAddress",
+      "TerminationFipsCode",
+      "TerminationPCode",
+      "TerminationNpaNxx",
+      "TransactionType"
+    ],
+    "properties": {
+      "AdjustmentMethod": {
+        "format": "int32",
+        "description": "Adjustment Method. \"Please see AdjustmentMethod in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Adjustment Methods.\"",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "BillToAddress": {
+        "$ref": "#/definitions/ZipAddress"
+      },
+      "BillToFipsCode": {
+        "description": "Bill-to FIPS code. Select only one BillToxxx option.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "BillToPCode": {
+        "format": "int32",
+        "description": "Bill-to PCode. Select only one BillToxxx option.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "BillToNpaNxx": {
+        "format": "int32",
+        "description": "Bill-to NPANXX. Select only one BillToxxx option.",
+        "type": "integer"
+      },
+      "BusinessClass": {
+        "format": "int32",
+        "description": "Business class. Please see BusinessClass in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Business Classes.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CategoryExemptions": {
+        "description": "List of tax category exemptions.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/CategoryExemption"
+        },
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Charge": {
+        "format": "double",
+        "description": "Charge amount to customer for transaction",
+        "type": "number",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CompanyIdentifier": {
+        "description": "Company identifier. Use the 3-character company identifier provided by Avalara to your organization in order to include this transaction in the monthly compliance reports. Otherwise, leave empty.",
+        "type": "string"
+      },
+      "CountyExempt": {
+        "description": "True if transaction is exempt from County Tax, otherwise false.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CountyPCode": {
+        "format": "int32",
+        "description": "Jurisdiction for county exemption.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CustomerNumber": {
+        "description": "User-defined customer number.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CustomerType": {
+        "format": "int32",
+        "description": "Customer type. Please see CustomerType in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Customer Types.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Date": {
+        "format": "date-time",
+        "description": "Transaction date.  Field is provided to allow rating and taxing to occur on a date other than the billing date.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Debit": {
+        "description": "Determines if this is a prepaid debit card transaction.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "DiscountType": {
+        "format": "int32",
+        "description": "Discount type. Please see DiscountType in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Discount Types.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Exemptions": {
+        "description": "List of tax exemptions.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxExemption"
+        },
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "ExemptionType": {
+        "format": "int32",
+        "description": "Set to 0 - reserved for future use. See ExemptionType under TaxData in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf'.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "FacilitiesBased": {
+        "description": "Specifies if the carrier delivering the service has company owned facilities to provide the service.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "FederalExempt": {
+        "description": "True if transaction is exempt from Federal Tax, otherwise false.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "FederalPCode": {
+        "format": "int32",
+        "description": "Jurisdiction for Federal exemption.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Franchise": {
+        "description": "Indicates if the company provides services sold pursuant to a franchise agreement between the carrier and jurisdiction.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Incorporated": {
+        "description": "True if this transaction is within an incorporated area of the local jurisdiction, otherwise False.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "InvoiceNumber": {
+        "format": "int32",
+        "description": "User-defined invoice number.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "IsPrivateLine": {
+        "description": "Indicates if the transaction is a private line transaction.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Lines": {
+        "format": "int32",
+        "description": "Number of lines sold to customer when applicable.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "LocalExempt": {
+        "description": "True if transaction is exempt from Local Tax, otherwise false.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "LocalPCode": {
+        "format": "int32",
+        "description": "Jurisdiction for local exemption.",
+        "type": "integer"
+      },
+      "Locations": {
+        "format": "int32",
+        "description": "Number of customer locations.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Minutes": {
+        "format": "double",
+        "description": "Number of minutes for call when appropriate.",
+        "type": "number",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional10": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional4": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional5": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional6": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional7": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional8": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Optional9": {
+        "format": "int32",
+        "description": "Optional user-defined value.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "OptionalAlpha1": {
+        "description": "Optional user-defined string value. 20-characters max.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "OptionalFields": {
+        "description": "User-defined list of optional alphanumeric fields.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/OptionalField"
+        },
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "OriginationAddress": {
+        "$ref": "#/definitions/ZipAddress"
+      },
+      "OriginationFipsCode": {
+        "description": "Origination FIPS code. Select only one Origination option.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "OriginationPCode": {
+        "format": "int32",
+        "description": "Origination PCode. Select only one Origination option.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "OriginationNpaNxx": {
+        "format": "int32",
+        "description": "Origination NPANXX. Select only one Origination option.",
+        "type": "integer"
+      },
+      "PrivateLineSplit": {
+        "format": "double",
+        "description": "For private line transactions, this is the split between the ending points of a private line. The value indicates how much the portion of the charge belongs to the origin user.",
+        "type": "number",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Regulated": {
+        "description": "True if regulated, otherwise false.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Sale": {
+        "description": "Indicates if this is a retail sale. Use false for resale/wholesale transactions.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "ServiceClass": {
+        "format": "int32",
+        "description": "Service class. Please see ServiceClass in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for a list of valid Service Classes.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "ServiceLevelNumber": {
+        "format": "int32",
+        "description": "User-defined service level number.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "ServiceType": {
+        "format": "int32",
+        "description": "Service type.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "StateExempt": {
+        "description": "True if transaction is exempt from State Tax, otherwise false.",
+        "type": "boolean",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "StatePCode": {
+        "format": "int32",
+        "description": "Jurisdiction for state exemption.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "TerminationAddress": {
+        "$ref": "#/definitions/ZipAddress"
+      },
+      "TerminationFipsCode": {
+        "description": "Termination FIPS code. Select only one Termination option.",
+        "type": "string",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "TerminationPCode": {
+        "format": "int32",
+        "description": "Termination PCode. Select only one Termination option.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "TerminationNpaNxx": {
+        "format": "int32",
+        "description": "Termination NPANXX. Select only one Termination option.",
+        "type": "integer"
+      },
+      "TransactionType": {
+        "format": "int32",
+        "description": "Transaction type.",
+        "type": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ZipAddress": {
+    "description": "Zip Address Class. Select only one BillToxxx option.",
+    "required": [
+      "CountryISO"
+    ],
+    "type": "object",
+    "properties": {
+      "CountryISO": {
+        "description": "Three-character country ISO code.",
+        "type": "string",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      },
+      "County": {
+        "description": "County name.",
+        "type": "string",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      },
+      "Locality": {
+        "description": "Locality name.",
+        "type": "string",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      },
+      "State": {
+        "description": "Two-character state abbreviation.",
+        "type": "string",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      },
+      "ZipCode": {
+        "description": "Zip code for location.",
+        "type": "string",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      },
+      "ZipP4": {
+        "description": "Zip + 4 for location.",
+        "type": "string",
+        "xml": {
+          "prefix": "Request: ezt, Response: a"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "BeginCustomerBatchEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/BeginCustomerBatchBody"
+      }
+    },
+    "x-methods-used-in": [
+      "BeginCustomerBatch"
+    ]
+  },
+  "BeginCustomerBatchBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "BeginCustomerBatch"
+    ],
+    "properties": {
+      "BeginCustomerBatch": {
+        "$ref": "#/definitions/BeginCustomerBatchObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "BeginCustomerBatchObject": {
+    "description": "The object used for starting a batch calculation.",
+    "required": [
+      "transaction"
+    ],
+    "properties": {
+      "transaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "BeginCustomerBatch",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "BeginCustomerBatchRespEnvelope": {
+    "description": "Flags the beginning of a customer transaction batch and returns a customer batch ID that can be used to submit each transaction and process the entire batch.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/BeginCustomerBatchRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "BeginCustomerBatch"
+    ]
+  },
+  "CalcAdjWithFipsCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithFipsCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithFipsCode"
+    ]
+  },
+  "CalcAdjWithFipsCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcAdjWithFipsCode"
+    ],
+    "properties": {
+      "CalcAdjWithFipsCode": {
+        "$ref": "#/definitions/CalcAdjWithFipsCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithFipsCodeObject": {
+    "description": "The object used for calculating adjustments using a FIPS code.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcAdjWithFipsCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithFipsCodeRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithFipsCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithFipsCode"
+    ]
+  },
+  "CalcAdjWithNpaNxxEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithNpaNxxBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithNpaNxx"
+    ]
+  },
+  "CalcAdjWithNpaNxxBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcAdjWithNpaNxx"
+    ],
+    "properties": {
+      "CalcAdjWithNpaNxx": {
+        "$ref": "#/definitions/CalcAdjWithNpaNxxObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithNpaNxxObject": {
+    "description": "The object used for calculating adjustments with NpaNxx.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcAdjWithNpaNxx",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithNpaNxxRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithNpaNxxRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithNpaNxx"
+    ]
+  },
+  "CalcAdjWithOverridesEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithOverridesBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithOverrides"
+    ]
+  },
+  "CalcAdjWithOverridesBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcAdjWithOverrides"
+    ],
+    "properties": {
+      "CalcAdjWithOverrides": {
+        "$ref": "#/definitions/CalcAdjWithOverridesObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithOverridesObject": {
+    "description": "The object used for calculating taxes using a overrides.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      },
+      "overrideList": {
+        "$ref": "#/definitions/OverrideList"
+      }
+    },
+    "xml": {
+      "name": "CalcAdjWithOverrides",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithOverridesRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithOverridesRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithOverrides"
+    ]
+  },
+  "CalcAdjWithPCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithPCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithPCode"
+    ]
+  },
+  "CalcAdjWithPCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcAdjWithPCode"
+    ],
+    "properties": {
+      "CalcAdjWithPCode": {
+        "$ref": "#/definitions/CalcAdjWithPCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithPCodeObject": {
+    "description": "The object used for calculating adjustments using a FIPS code.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcAdjWithPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithPCodeRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithPCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithPCode"
+    ]
+  },
+  "CalcAdjWithZipAddressEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithZipAddressBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithZipAddress"
+    ]
+  },
+  "CalcAdjWithZipAddressBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcAdjWithZipAddress"
+    ],
+    "properties": {
+      "CalcAdjWithZipAddress": {
+        "$ref": "#/definitions/CalcAdjWithZipAddressObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithZipAddressObject": {
+    "description": "The object used for calculating taxes using a zip address.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcAdjWithZipAddress",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithZipAddressRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcAdjWithZipAddressRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcAdjWithZipAddress"
+    ]
+  },
+  "CalcCustAdjEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcCustAdjBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcCustAdj"
+    ]
+  },
+  "CalcCustAdjBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcCustAdj"
+    ],
+    "properties": {
+      "CalcCustAdj": {
+        "$ref": "#/definitions/CalcCustAdjObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustAdjObject": {
+    "description": "The object used for calculating a single batch transaction.",
+    "required": [
+      "custBatchId",
+      "adjustment"
+    ],
+    "properties": {
+      "custBatchId": {
+        "$ref": "#/definitions/custBatchId"
+      },
+      "adjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcCustAdj",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustAdjRespEnvelope": {
+    "description": "Retruns a boolean value indicating success (true) or failure (false).",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcCustAdjRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcCustAdj"
+    ]
+  },
+  "CalcCustTaxesEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcCustTaxesBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcCustTaxes"
+    ]
+  },
+  "CalcCustTaxesBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcCustTaxes"
+    ],
+    "properties": {
+      "CalcCustTaxes": {
+        "$ref": "#/definitions/CalcCustTaxesObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustTaxesObject": {
+    "description": "The object used for calculating a single batch transaction.",
+    "required": [
+      "custBatchId",
+      "transaction"
+    ],
+    "properties": {
+      "custBatchId": {
+        "$ref": "#/definitions/custBatchId"
+      },
+      "transaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcCustTaxes",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustTaxesRespEnvelope": {
+    "description": "Retruns a boolean value indicating success (true) or failure (false).",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcCustTaxesRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcCustTaxes"
+    ]
+  },
+  "CalcJurisdictionEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcJurisdictionBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcJurisdiction"
+    ]
+  },
+  "CalcJurisdictionBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcJurisdiction"
+    ],
+    "properties": {
+      "CalcJurisdiction": {
+        "$ref": "#/definitions/CalcJurisdictionObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcJurisdictionObject": {
+    "description": "The object used for determining jurisdiction.",
+    "required": [
+      "transaction"
+    ],
+    "properties": {
+      "transaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcJurisdiction",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/ "
+    },
+    "x-methods-used-in": []
+  },
+  "CalcJurisdictionRespEnvelope": {
+    "description": "Returns the PCode at the lowest taxing jurisdiction.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcJurisdictionRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcJurisdiction"
+    ]
+  },
+  "CalcProRatedAdjEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcProRatedAdjBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcProRatedAdj"
+    ]
+  },
+  "CalcProRatedAdjBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcProRatedAdj"
+    ],
+    "properties": {
+      "CalcProRatedAdj": {
+        "$ref": "#/definitions/CalcProRatedAdjObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedAdjObject": {
+    "description": "The object used for calculating prorated adjustment.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      },
+      "percent": {
+        "format": "double",
+        "description": "Pro-rated percent specified as a decimal.",
+        "type": "number",
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "CalcProRatedAdj",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedAdjRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcProRatedAdjRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcProRatedAdj"
+    ]
+  },
+  "CalcProRatedTaxesEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcProRatedTaxesBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcProRatedTaxes"
+    ]
+  },
+  "CalcProRatedTaxesBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcProRatedTaxes"
+    ],
+    "properties": {
+      "CalcProRatedTaxes": {
+        "$ref": "#/definitions/CalcProRatedTaxesObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedTaxesObject": {
+    "description": "The object used for calculating prorated taxes.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      },
+      "percent": {
+        "format": "double",
+        "description": "Pro-rated percent specified as a decimal.",
+        "type": "number",
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "CalcProRatedTaxes",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedTaxesRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcProRatedTaxesRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcProRatedTaxes"
+    ]
+  },
+  "CalcReverseAdjWithFipsCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithFipsCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithFipsCode"
+    ]
+  },
+  "CalcReverseAdjWithFipsCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseAdjWithFipsCode"
+    ],
+    "properties": {
+      "CalcReverseAdjWithFipsCode": {
+        "$ref": "#/definitions/CalcReverseAdjWithFipsCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithFipsCodeObject": {
+    "description": "The object used for calculating reverse taxes using a FIPS code.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseAdjWithFipsCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithFipsCodeRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithFipsCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithFipsCode"
+    ]
+  },
+  "CalcReverseAdjWithNpaNxxEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithNpaNxxBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithNpaNxx"
+    ]
+  },
+  "CalcReverseAdjWithNpaNxxBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseAdjWithNpaNxx"
+    ],
+    "properties": {
+      "CalcReverseAdjWithNpaNxx": {
+        "$ref": "#/definitions/CalcReverseAdjWithNpaNxxObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithNpaNxxObject": {
+    "description": "The object used for calculating reverse taxes using an NpaNxx value.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseAdjWithNpaNxx",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithNpaNxxRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithNpaNxxRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithNpaNxx"
+    ]
+  },
+  "CalcReverseAdjWithPCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithPCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithPCode"
+    ]
+  },
+  "CalcReverseAdjWithPCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseAdjWithPCode"
+    ],
+    "properties": {
+      "CalcReverseAdjWithPCode": {
+        "$ref": "#/definitions/CalcReverseAdjWithPCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithPCodeObject": {
+    "description": "The object used for calculating reverse taxes using a PCode.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseAdjWithPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithPCodeRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithPCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithPCode"
+    ]
+  },
+  "CalcReverseAdjWithZipCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithZipCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithZipCode"
+    ]
+  },
+  "CalcReverseAdjWithZipCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseAdjWithZipCode"
+    ],
+    "properties": {
+      "CalcReverseAdjWithZipCode": {
+        "$ref": "#/definitions/CalcReverseAdjWithZipCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithZipCodeObject": {
+    "description": "The object used for calculating reverse taxes using a zip code.",
+    "required": [
+      "anAdjustment"
+    ],
+    "properties": {
+      "anAdjustment": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseAdjWithPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithZipCodeRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseAdjWithZipCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseAdjWithZipCode"
+    ]
+  },
+  "CalcReverseTaxesWithFipsCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithFipsCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithFipsCode"
+    ]
+  },
+  "CalcReverseTaxesWithFipsCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseTaxesWithFipsCode"
+    ],
+    "properties": {
+      "CalcReverseTaxesWithFipsCode": {
+        "$ref": "#/definitions/CalcReverseTaxesWithFipsCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithFipsCodeObject": {
+    "description": "The object used for calculating reverse taxes using a FIPS code.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseTaxesWithFipsCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithFipsCodeRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithFipsCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithFipsCode"
+    ]
+  },
+  "CalcReverseTaxesWithNpaNxxEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithNpaNxxBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithNpaNxx"
+    ]
+  },
+  "CalcReverseTaxesWithNpaNxxBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseTaxesWithNpaNxx"
+    ],
+    "properties": {
+      "CalcReverseTaxesWithNpaNxx": {
+        "$ref": "#/definitions/CalcReverseTaxesWithNpaNxxObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithNpaNxxObject": {
+    "description": "The object used for calculating reverse taxes using an NpaNxx.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseTaxesWithNpaNxx",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithNpaNxxRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithNpaNxxRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithNpaNxx"
+    ]
+  },
+  "CalcReverseTaxesWithPCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithPCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithPCode"
+    ]
+  },
+  "CalcReverseTaxesWithPCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseTaxesWithPCode"
+    ],
+    "properties": {
+      "CalcReverseTaxesWithPCode": {
+        "$ref": "#/definitions/CalcReverseTaxesWithPCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithPCodeObject": {
+    "description": "The object used for calculating reverse taxes using a PCode.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseTaxesWithPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithPCodeRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithPCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithPCode"
+    ]
+  },
+  "CalcReverseTaxesWithZipAddressEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithZipAddressBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithZipAddress"
+    ]
+  },
+  "CalcReverseTaxesWithZipAddressBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcReverseTaxesWithZipAddress"
+    ],
+    "properties": {
+      "CalcReverseTaxesWithZipAddress": {
+        "$ref": "#/definitions/CalcReverseTaxesWithZipAddressObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithZipAddressObject": {
+    "description": "The object used for calculating reverse taxes using a Zip Address.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcReverseTaxesWithZipAddress",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithZipAddressRespEnvelope": {
+    "description": "Returns the calculated base sale amount for the transaction and an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcReverseTaxesWithZipAddressRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcReverseTaxesWithZipAddress"
+    ]
+  },
+  "CalcTaxesInCustModeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesInCustModeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesInCustMode"
+    ]
+  },
+  "CalcTaxesInCustModeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcTaxesInCustMode"
+    ],
+    "properties": {
+      "CalcTaxesInCustMode": {
+        "$ref": "#/definitions/CalcTaxesInCustModeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeObject": {
+    "description": "The object used for calculating taxes in customer mode.",
+    "properties": {
+      "transactions": {
+        "$ref": "#/definitions/Transaction"
+      },
+      "adjustments": {
+        "$ref": "#/definitions/Transaction"
+      },
+      "sauTransactions": {
+        "$ref": "#/definitions/CalcTaxesInCustModeObject > SauTransactions"
+      },
+      "sauAdjustments": {
+        "$ref": "#/definitions/CalcTaxesInCustModeObject > SauAdjustments"
+      },
+      "nexus": {
+        "$ref": "#/definitions/CalcTaxesInCustModeObject > Nexus"
+      },
+      "exclusions": {
+        "$ref": "#/definitions/CalcTaxesInCustModeObject > Exclusions"
+      }
+    },
+    "xml": {
+      "name": "CalcTaxesInCustMode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeRespEnvelope": {
+    "description": "Data structure containing an array of TaxData objects for each individual transaction processed and CustomerTaxData array containing the summarized taxes for the customer batch.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesInCustModeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesInCustMode"
+    ]
+  },
+  "CalcTaxesWithFipsCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithFipsCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithFipsCode"
+    ]
+  },
+  "CalcTaxesWithFipsCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcTaxesWithFipsCode"
+    ],
+    "properties": {
+      "CalcTaxesWithFipsCode": {
+        "$ref": "#/definitions/CalcTaxesWithFipsCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithFipsCodeObject": {
+    "description": "The object used for calculating taxes with FIPS Codes.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcTaxesWithFipsCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithFipsCodeRespEnvelope": {
+    "description": "Transaction data for performing tax calculations.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithFipsCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithFipsCode"
+    ]
+  },
+  "CalcTaxesWithNpaNxxEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithNpaNxxBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithNpaNxx"
+    ]
+  },
+  "CalcTaxesWithNpaNxxBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcTaxesWithNpaNxx"
+    ],
+    "properties": {
+      "CalcTaxesWithNpaNxx": {
+        "$ref": "#/definitions/CalcTaxesWithNpaNxxObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithNpaNxxObject": {
+    "description": "The object used for calculating taxes with NpaNxx.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcTaxesWithNpaNxx",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithNpaNxxRespEnvelope": {
+    "description": "Transaction data for performing tax calculations.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithNpaNxxRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithNpaNxx"
+    ]
+  },
+  "CalcTaxesWithOverridesEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithOverridesBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithOverrides"
+    ]
+  },
+  "CalcTaxesWithOverridesBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcTaxesWithOverrides"
+    ],
+    "properties": {
+      "CalcTaxesWithOverrides": {
+        "$ref": "#/definitions/CalcTaxesWithOverridesObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithOverridesObject": {
+    "description": "The object used for calculating taxes with overrides.",
+    "required": [
+      "aTransaction",
+      "overrideList"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      },
+      "overrideList": {
+        "$ref": "#/definitions/OverrideList"
+      }
+    },
+    "xml": {
+      "name": "CalcTaxesWithOverrides",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithOverridesRespEnvelope": {
+    "description": "Returns an array of TaxData objects that contain the information about the taxes applied.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithOverridesRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithOverrides"
+    ]
+  },
+  "CalcTaxesWithPCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithPCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithPCode"
+    ]
+  },
+  "CalcTaxesWithPCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcTaxesWithPCode"
+    ],
+    "properties": {
+      "CalcTaxesWithPCode": {
+        "$ref": "#/definitions/CalcTaxesWithPCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithPCodeObject": {
+    "description": "The object used for calculating taxes with PCode.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcTaxesWithPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithPCodeRespEnvelope": {
+    "description": "Transaction data for performing tax calculations.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithPCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithPCode"
+    ]
+  },
+  "CalcTaxesWithZipAddressEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithZipAddressBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithZipAddress"
+    ]
+  },
+  "CalcTaxesWithZipAddressBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CalcTaxesWithZipAddress"
+    ],
+    "properties": {
+      "CalcTaxesWithZipAddress": {
+        "$ref": "#/definitions/CalcTaxesWithZipAddressObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithZipAddressObject": {
+    "description": "The object used for calculating taxes with Zip Address.",
+    "required": [
+      "aTransaction"
+    ],
+    "properties": {
+      "aTransaction": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "xml": {
+      "name": "CalcTaxesWithZipAddress",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithZipAddressRespEnvelope": {
+    "description": "Transaction data for performing tax calculations.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CalcTaxesWithZipAddressRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CalcTaxesWithZipAddress"
+    ]
+  },
+  "FipsToPCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/FipsToPCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "FipsToPCode"
+    ]
+  },
+  "FipsToPCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "FipsToPCode"
+    ],
+    "properties": {
+      "FipsToPCode": {
+        "$ref": "#/definitions/FipsToPCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "FipsToPCodeObject": {
+    "description": "The object used for converting a FIPS code to a PCode.",
+    "required": [
+      "aFips"
+    ],
+    "properties": {
+      "aFips": {
+        "type": "number",
+        "format": "integer",
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "FipsToPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "FipsToPCodeRespEnvelope": {
+    "description": "Returns the PCode corresponding to the submitted FIPS value.",
+    "xml": {
+      "name": "FipsToPCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/FipsToPCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "FipsToPCode"
+    ]
+  },
+  "GetAddressEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetAddressBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetAddress"
+    ]
+  },
+  "GetAddressBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetAddress"
+    ],
+    "properties": {
+      "GetAddress": {
+        "$ref": "#/definitions/GetAddressObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetAddressObject": {
+    "description": "The object used for getting an address.",
+    "required": [
+      "aPCode"
+    ],
+    "properties": {
+      "aPCode": {
+        "type": "number",
+        "format": "integer",
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "GetAddress",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "GetAddressRespEnvelope": {
+    "description": "This method returns the addresses for the specified jurisdiction.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetAddressRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetAddress"
+    ]
+  },
+  "AddressDataArray": {
+    "properties": {
+      "AddressData": {
+        "$ref": "#/definitions/ZipAddress"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CreateReportEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/CreateReportBody"
+      }
+    },
+    "x-methods-used-in": [
+      "CreateReport"
+    ]
+  },
+  "CreateReportBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "CreateReport"
+    ],
+    "properties": {
+      "CreateReport": {
+        "$ref": "#/definitions/CreateReportObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "CreateReportObject": {
+    "description": "The object used to request creation of a report.",
+    "required": [
+      "CreateReport"
+    ],
+    "properties": {
+      "CreateReport": {
+        "$ref": "#/definitions/CreateReport"
+      }
+    },
+    "xml": {
+      "name": "CreateReport",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "CreateReport": {
+    "required": [
+      "reportInfo"
+    ],
+    "properties": {
+      "reportInfo": {
+        "$ref": "#/definitions/reportInfo"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "reportInfo": {
+    "description": "Fields that specify the reports to provide, the type of sorted report to generate, the sepcifications for the sorted report and the email delivery address. Note: If TimeSpan is provided, EndDate is not required.",
+    "xml": {
+      "prefix": "tem",
+      "namespace": "xmlns:ezt=\"http://schemas.datacontract.org/2004/07/EZTaxWebService\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\""
+    },
+    "required": [
+      "EmailAddress",
+      "ReportType",
+      "StartDate",
+      "EndDate",
+      "TimeSpan"
+    ],
+    "properties": {
+      "BaseReport": {
+        "type": "string",
+        "description": "When generating a �customlog� report, indicates",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CreateNbaFile": {
+        "type": "boolean",
+        "description": "Indicates if non-billable amounts should be placed in a separate file.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CreateNcaFile": {
+        "type": "boolean",
+        "description": "Indicates if non-compliance amounts should be placed in a separate file.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "CustomLogFields": {
+        "$ref": "#/definitions/CustomLogFields"
+      },
+      "EmailAddress": {
+        "type": "string",
+        "description": "Email address for receiving an email notification when the report has been generated (up to 100 characters).",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "EndDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": "End of date range for data to be included in the report. This field is not required if TimeSpan is specified.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "FileExtension": {
+        "type": "string",
+        "description": "Extension for output file (up to 5 characters).",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "FileName": {
+        "type": "string",
+        "description": "Name for output file (up to 100 characters).",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "IncludeHeaders": {
+        "type": "boolean",
+        "description": "Indicates if the columns headers should be included in the first row of the report output.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Precision": {
+        "type": "integer",
+        "description": "Number of decimal places for computed values.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "ReportType": {
+        "type": "string",
+        "description": "Name of report type to be generated. Report types inlcude: srtcomma20l, srtcomma20l-p, srtcomma20ld, srtcommadetail and customlog. Refer to sectin Report Types in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for details.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "StartDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Beginning of date range for data to be included in the report.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "TimeSpan": {
+        "type": "string",
+        "format": "P#D where # is the number of days.",
+        "description": "TimeSpan for the date range to be included in the report (e.g. number of days after StartDate). This field is not required if EndDate is specified.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CustomLogFields": {
+    "type": "object",
+    "description": "Container for zero or more CustomLogField sepcifications.",
+    "required": [
+      "CustomLogField"
+    ],
+    "properties": {
+      "CustomLogField": {
+        "$ref": "#/definitions/CustomLogField"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CustomLogField": {
+    "type": "array",
+    "items": {
+      "$ref": "#/definitions/CustomLogFieldList"
+    },
+    "x-methods-used-in": []
+  },
+  "CustomLogFieldList": {
+    "description": "List of columns to include in the report when using the �customlog� report type.",
+    "xml": {
+      "prefix": "ezt"
+    },
+    "required": [
+      "Column",
+      "Include",
+      "Sort"
+    ],
+    "properties": {
+      "Column": {
+        "type": "string",
+        "description": "Name of column. Refer to Custom Log Report Columns in either 'TM_00116_AFC SaaS Pro Telecom Developer Manual.pdf' or 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for details. There are 51 column names available for use.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Include": {
+        "type": "boolean",
+        "description": "Indicates if the column should be included in the output.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      },
+      "Sort": {
+        "type": "boolean",
+        "description": "Indicates if the column should be used for sorting.",
+        "xml": {
+          "prefix": "ezt"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CreateReportRespEnvelope": {
+    "description": "Returns a boolean as a string. \"true\" indicates success and \"false\" indicates failure.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/CreateReportRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "CreateReport"
+    ]
+  },
+  "GetEZTaxDbVersionEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetEZTaxDbVersionBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetEZTaxDbVersion"
+    ]
+  },
+  "GetEZTaxDbVersionBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetEZTaxDbVersion"
+    ],
+    "properties": {
+      "GetEZTaxDbVersion": {
+        "$ref": "#/definitions/GetEZTaxDbVersion"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetEZTaxDbVersion": {
+    "description": "The request to fetch the database version.",
+    "xml": {
+      "name": "GetEZTaxDbVersion",
+      "prefix": "tem"
+    },
+    "properties": {},
+    "x-methods-used-in": []
+  },
+  "GetEZTaxDbVersionRespEnvelope": {
+    "description": "Returns the version of the AFC database as a string.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetEZTaxDbVersionRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetEZTaxDbVersion"
+    ]
+  },
+  "GetEZTaxVersionEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetEZTaxVersionBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetEZTaxVersion"
+    ]
+  },
+  "GetEZTaxVersionBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetEZTaxVersion"
+    ],
+    "properties": {
+      "GetEZTaxVersion": {
+        "$ref": "#/definitions/GetEZTaxVersion"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetEZTaxVersion": {
+    "description": "The request to fetch the EZTax Net version.",
+    "properties": {},
+    "xml": {
+      "name": "GetEZTaxVersion",
+      "prefix": "tem"
+    },
+    "x-methods-used-in": []
+  },
+  "GetEZTaxVersionRespEnvelope": {
+    "description": "Returns the tax engine version information as a string.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetEZTaxVersionRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetEZTaxVersion"
+    ]
+  },
+  "GetOptionalFieldKeyDescEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetOptionalFieldKeyDescBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetOptionalFieldKeyDesc"
+    ]
+  },
+  "GetOptionalFieldKeyDescBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetOptionalFieldKeyDesc"
+    ],
+    "properties": {
+      "GetOptionalFieldKeyDesc": {
+        "$ref": "#/definitions/GetOptionalFieldKeyDesc"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetOptionalFieldKeyDesc": {
+    "description": "The request to retrieve the Field Key Descriptions.",
+    "properties": {},
+    "xml": {
+      "name": "GetOptionalFieldKeyDesc",
+      "prefix": "tem"
+    },
+    "x-methods-used-in": []
+  },
+  "GetOptionalFieldKeyDescRespEnvelope": {
+    "description": "Returns the Field Key Descriptions.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetOptionalFieldKeyDescRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetOptionalFieldKeyDesc"
+    ]
+  },
+  "GetServerTimeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetServerTimeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetServerTime"
+    ]
+  },
+  "GetServerTimeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetServerTime"
+    ],
+    "properties": {
+      "GetServerTime": {
+        "$ref": "#/definitions/GetServerTimeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetServerTimeObject": {
+    "description": "The object used to get the current server time. Syntax: a: GetServerTime /",
+    "properties": {},
+    "xml": {
+      "name": "GetServerTime",
+      "prefix": "tem"
+    },
+    "x-methods-used-in": []
+  },
+  "GetServerTimeRespEnvelope": {
+    "description": "Returns the server date and time as a formatted string.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetServerTimeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetServerTime"
+    ]
+  },
+  "GetTaxCategoryEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetTaxCategoryBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetTaxCategory"
+    ]
+  },
+  "GetTaxCategoryBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetTaxCategory"
+    ],
+    "properties": {
+      "GetTaxCategory": {
+        "$ref": "#/definitions/GetTaxCategoryObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxCategoryObject": {
+    "description": "The object used for fetching a Tax Type Category string.",
+    "required": [
+      "aTaxType"
+    ],
+    "properties": {
+      "aTaxType": {
+        "type": "number",
+        "format": "integer",
+        "description": "The tax type.",
+        "example": 1,
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "GetTaxCategory",
+      "prefix": "tem"
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxCategoryRespEnvelope": {
+    "description": "This method returns a string describing the tax category for the specified tax type.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetTaxCategoryRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetTaxCategory"
+    ]
+  },
+  "GetTaxDescriptionEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetTaxDescriptionBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetTaxDescription"
+    ]
+  },
+  "GetTaxDescriptionBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetTaxDescription"
+    ],
+    "properties": {
+      "GetTaxDescription": {
+        "$ref": "#/definitions/GetTaxDescriptionObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxDescriptionObject": {
+    "description": "The object used for fetching a Tax Type Description string.",
+    "required": [
+      "aTaxType"
+    ],
+    "properties": {
+      "aTaxType": {
+        "type": "number",
+        "format": "integer",
+        "description": "The tax type.",
+        "example": 1,
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "GetTaxDescription",
+      "prefix": "tem"
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxDescriptionRespEnvelope": {
+    "description": "This method returns a string describing the tax description for the specified tax type.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetTaxDescriptionRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetTaxDescription"
+    ]
+  },
+  "GetTaxRatesEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetTaxRatesBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetTaxRates"
+    ]
+  },
+  "GetTaxRatesBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetTaxRates"
+    ],
+    "properties": {
+      "GetTaxRates": {
+        "$ref": "#/definitions/GetTaxRatesObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxRatesObject": {
+    "description": "The object used for getting tax rates.",
+    "required": [
+      "PCode"
+    ],
+    "properties": {
+      "PCode": {
+        "type": "number",
+        "format": "integer",
+        "xml": {
+          "prefix": "ezt"
+        }
+      }
+    },
+    "xml": {
+      "name": "GetTaxRates",
+      "prefix": "ezt",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxRatesRespEnvelope": {
+    "description": "Determines the tax rate information for a jurisdiction identified by the input PCode.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetTaxRatesRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetTaxRates"
+    ]
+  },
+  "GetVersionEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "http://schemas.xmlsoap.org/soap/envelope/"
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetVersionBody"
+      }
+    },
+    "x-methods-used-in": [
+      "GetVersion"
+    ]
+  },
+  "GetVersionBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "GetVersion"
+    ],
+    "properties": {
+      "GetVersion": {
+        "$ref": "#/definitions/GetVersion"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "GetVersion": {
+    "description": "The request to fetch the Web Service version.",
+    "properties": {},
+    "xml": {
+      "name": "GetVersion",
+      "prefix": "a"
+    },
+    "x-methods-used-in": []
+  },
+  "GetVersionRespEnvelope": {
+    "description": "Returns the version of the AFC SaaS Pro Web Service as a string.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/GetVersionRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "GetVersion"
+    ]
+  },
+  "NpaNxxToPCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/NpaNxxToPCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "NpaNxxToPCode"
+    ]
+  },
+  "NpaNxxToPCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "NpaNxxToPCode"
+    ],
+    "properties": {
+      "NpaNxxToPCode": {
+        "$ref": "#/definitions/NpaNxxToPCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "NpaNxxToPCodeObject": {
+    "description": "The object used for converting an NpaNxx to PCode.",
+    "required": [
+      "anNpaNxx"
+    ],
+    "properties": {
+      "anNpaNxx": {
+        "type": "number",
+        "format": "integer",
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "NpaNxxToPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "NpaNxxToPCodeRespEnvelope": {
+    "description": "Returns the PCode corresponding to the submitted NpaNxx value.",
+    "xml": {
+      "name": "NpaNxxToPCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/NpaNxxToPCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "NpaNxxToPCode"
+    ]
+  },
+  "PCodeToFipsEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/PCodeToFipsBody"
+      }
+    },
+    "x-methods-used-in": [
+      "PCodeToFips"
+    ]
+  },
+  "PCodeToFipsBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "PCodeToFips"
+    ],
+    "properties": {
+      "PCodeToFips": {
+        "$ref": "#/definitions/PCodeToFipsObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "PCodeToFipsObject": {
+    "description": "The object used for converting a PCode to a FIPS code.",
+    "required": [
+      "aPCode"
+    ],
+    "properties": {
+      "aPCode": {
+        "type": "number",
+        "format": "integer",
+        "xml": {
+          "prefix": "tem"
+        }
+      }
+    },
+    "xml": {
+      "name": "PCodeToFips",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "PCodeToFipsRespEnvelope": {
+    "description": "Returns the FIPS code corresponding to the submitted PCode value.",
+    "xml": {
+      "name": "PCodeToFipsResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/PCodeToFipsRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "PCodeToFips"
+    ]
+  },
+  "ProcessCustomerBatchEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/ProcessCustomerBatchBody"
+      }
+    },
+    "x-methods-used-in": [
+      "ProcessCustomerBatch"
+    ]
+  },
+  "ProcessCustomerBatchBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "ProcessCustomerBatch"
+    ],
+    "properties": {
+      "ProcessCustomerBatch": {
+        "$ref": "#/definitions/ProcessCustomerBatchObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchObject": {
+    "description": "The object used to submit a Process Customer Batch request.",
+    "required": [
+      "custBatchId"
+    ],
+    "properties": {
+      "custBatchId": {
+        "$ref": "#/definitions/custBatchId"
+      },
+      "returnDetail": {
+        "type": "boolean",
+        "example": true,
+        "description": "Request detailed tax data in addition to summarized taxes."
+      },
+      "nexus": {
+        "$ref": "#/definitions/ProcessCustomerBatchObject > Nexus"
+      },
+      "exclusions": {
+        "$ref": "#/definitions/ProcessCustomerBatchObject > Exclusions"
+      }
+    },
+    "xml": {
+      "name": "ProcessCustomerBatch",
+      "prefix": "tem"
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchRespEnvelope": {
+    "description": "Returns a CustomerTaxData array containing the summarized taxes for the customer batch. And, if requested, an array of TaxData objects for each individual transaction processed.",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/ProcessCustomerBatchRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "ProcessCustomerBatch"
+    ]
+  },
+  "UpdateOptionalFieldKeyDescEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/UpdateOptionalFieldKeyDescBody"
+      }
+    },
+    "x-methods-used-in": [
+      "UpdateOptionalFieldKeyDesc"
+    ]
+  },
+  "UpdateOptionalFieldKeyDescBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "UpdateOptionalFieldKeyDesc"
+    ],
+    "properties": {
+      "UpdateOptionalFieldKeyDesc": {
+        "$ref": "#/definitions/UpdateOptionalFieldKeyDesc"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "UpdateOptionalFieldKeyDesc": {
+    "description": "The object used to update a single Optional Field Key Description.",
+    "required": [
+      "optionalFieldDesc"
+    ],
+    "properties": {
+      "optionalFieldDesc": {
+        "$ref": "#/definitions/optionalFieldDesc"
+      }
+    },
+    "xml": {
+      "name": "optionalFieldDesc",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "optionalFieldDesc": {
+    "type": "object",
+    "xml": {
+      "prefix": "tem",
+      "namespace": " xmlns:ezt=\"http://schemas.datacontract.org/2004/07/EZTaxWebService\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\">"
+    },
+    "required": [
+      "OptionalKey"
+    ],
+    "properties": {
+      "OptionalKey": {
+        "$ref": "#/definitions/OptionalKeyData"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "UpdateOptionalFieldKeyDescRespEnvelope": {
+    "description": "Retruns a boolean value indicating success (true) or failure (false).",
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/UpdateOptionalFieldKeyDescRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "UpdateOptionalFieldKeyDesc"
+    ]
+  },
+  "ZipToPCodeEnvelope": {
+    "xml": {
+      "name": "Envelope",
+      "prefix": "s",
+      "namespace": "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\""
+    },
+    "required": [
+      "Header",
+      "Body"
+    ],
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/Header"
+      },
+      "Body": {
+        "$ref": "#/definitions/ZipToPCodeBody"
+      }
+    },
+    "x-methods-used-in": [
+      "ZipToPCode"
+    ]
+  },
+  "ZipToPCodeBody": {
+    "description": "Container for the request payload.",
+    "required": [
+      "ZipToPCode"
+    ],
+    "properties": {
+      "ZipToPCode": {
+        "$ref": "#/definitions/ZipToPCodeObject"
+      }
+    },
+    "xml": {
+      "name": "Body",
+      "prefix": "s"
+    },
+    "x-methods-used-in": []
+  },
+  "ZipToPCodeObject": {
+    "description": "The object used for converting a zip address to PCode.",
+    "required": [
+      "aZipAddress"
+    ],
+    "properties": {
+      "aZipAddress": {
+        "$ref": "#/definitions/ZipAddress"
+      }
+    },
+    "xml": {
+      "name": "ZipToPCode",
+      "prefix": "tem",
+      "namespace": "http://tempuri.org/"
+    },
+    "x-methods-used-in": []
+  },
+  "ZipToPCodeRespEnvelope": {
+    "description": "Returns the PCode corresponding to the submitted zip address.",
+    "xml": {
+      "name": "ZipToPCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "Header": {
+        "$ref": "#/definitions/HeaderResp"
+      },
+      "Body": {
+        "$ref": "#/definitions/ZipToPCodeRespEnvelope > Body"
+      }
+    },
+    "x-methods-used-in": [
+      "ZipToPCode"
+    ]
+  },
+  "InternalServerError > Fault": {
+    "description": "Error information.",
+    "xml": {
+      "name": "Fault",
+      "prefix": "s"
+    },
+    "required": [
+      "faultcode",
+      "faultstring"
+    ],
+    "properties": {
+      "faultcode": {
+        "xml": {
+          "name": "faultcode",
+          "namespace": "http://schemas.microsoft.com/net/2005/12/windowscommunicationfoundation/dispatcher"
+        },
+        "type": "string",
+        "description": "Failure cause."
+      },
+      "faultstring": {
+        "xml": {
+          "name": "faultstring"
+        },
+        "type": "string",
+        "description": "Single string describing the failure."
+      },
+      "detail": {
+        "$ref": "#/definitions/FaultDetail"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "FaultDetail > ExceptionDetail": {
+    "xml": {
+      "name": "ExceptionDetail",
+      "namespace": "xmlns=\"http://schemas.datacontract.org/2004/07/System.SOerviceModel\" xmln\\:i=\"http://www.w3.org/2001/XMLSchema-instance\">"
+    },
+    "properties": {
+      "InnerException": {
+        "$ref": "#/definitions/FaultDetail > ExceptionDetail > InnerException"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "FaultDetail > ExceptionDetail > InnerException": {
+    "xml": {
+      "name": "InnerException"
+    },
+    "description": "One or more levels of exception handling.",
+    "properties": {
+      "ExceptionMessage": {
+        "xml": {
+          "name": "Message",
+          "wrapped": true
+        },
+        "description": "One or more exception messages.",
+        "type": "string"
+      },
+      "ExceptionStackTrce": {
+        "xml": {
+          "name": "StackTrace",
+          "wrapped": true
+        },
+        "description": "Stack trace following an exception message.",
+        "type": "string"
+      },
+      "ExceptionType": {
+        "xml": {
+          "name": "Type",
+          "wrapped": true
+        },
+        "description": "The type of the Exception",
+        "type": "string"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "BeginCustomerBatchRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "BeginCustomerBatchResponse": {
+        "$ref": "#/definitions/BeginCustomerBatchRespEnvelope > Body > BeginCustomerBatchResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "BeginCustomerBatchRespEnvelope > Body > BeginCustomerBatchResponse": {
+    "type": "object",
+    "title": "BeginCustomerBatchResponse",
+    "xml": {
+      "name": "BeginCustomerBatchResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "BeginCustomerBatchResult": {
+        "type": "number",
+        "format": "integer",
+        "example": 49112,
+        "description": "Batch ID for transaction submission and batch processing.",
+        "title": "BeginCustomerBatchResult",
+        "xml": {
+          "name": "BeginCustomerBatchResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithFipsCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcAdjWithFipsCodeResponse": {
+        "$ref": "#/definitions/CalcAdjWithFipsCodeRespEnvelope > Body > CalcAdjWithFipsCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithFipsCodeRespEnvelope > Body > CalcAdjWithFipsCodeResponse": {
+    "type": "object",
+    "title": "CalcAdjWithFipsCodeResponse",
+    "xml": {
+      "name": "CalcAdjWithFipsCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcAdjWithFipsCodeResult": {
+        "$ref": "#/definitions/CalcAdjWithFipsCodeRespEnvelope > Body > CalcAdjWithFipsCodeResponse > CalcAdjWithFipsCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithFipsCodeRespEnvelope > Body > CalcAdjWithFipsCodeResponse > CalcAdjWithFipsCodeResult": {
+    "type": "object",
+    "title": "CalcAdjWithFipsCodeResult",
+    "xml": {
+      "name": "CalcAdjWithFipsCodeResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithNpaNxxRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcAdjWithNpaNxxResponse": {
+        "$ref": "#/definitions/CalcAdjWithNpaNxxRespEnvelope > Body > CalcAdjWithNpaNxxResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithNpaNxxRespEnvelope > Body > CalcAdjWithNpaNxxResponse": {
+    "type": "object",
+    "title": "CalcAdjWithNpaNxxResponse",
+    "xml": {
+      "name": "CalcAdjWithNpaNxxResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcAdjWithNpaNxxResult": {
+        "$ref": "#/definitions/CalcAdjWithNpaNxxRespEnvelope > Body > CalcAdjWithNpaNxxResponse > CalcAdjWithNpaNxxResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithNpaNxxRespEnvelope > Body > CalcAdjWithNpaNxxResponse > CalcAdjWithNpaNxxResult": {
+    "type": "object",
+    "title": "CalcAdjWithNpaNxxResult",
+    "xml": {
+      "name": "CalcAdjWithNpaNxxResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithOverridesRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcAdjWithOverridesResponse": {
+        "$ref": "#/definitions/CalcAdjWithOverridesRespEnvelope > Body > CalcAdjWithOverridesResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithOverridesRespEnvelope > Body > CalcAdjWithOverridesResponse": {
+    "type": "object",
+    "title": "CalcAdjWithOverridesResponse",
+    "xml": {
+      "name": "CalcAdjWithOverridesResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcAdjWithOverridesResult": {
+        "$ref": "#/definitions/CalcAdjWithOverridesRespEnvelope > Body > CalcAdjWithOverridesResponse > CalcAdjWithOverridesResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithOverridesRespEnvelope > Body > CalcAdjWithOverridesResponse > CalcAdjWithOverridesResult": {
+    "type": "object",
+    "title": "CalcAdjWithOverridesResult",
+    "xml": {
+      "name": "CalcAdjWithOverridesResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithPCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcAdjWithPCodeResponse": {
+        "$ref": "#/definitions/CalcAdjWithPCodeRespEnvelope > Body > CalcAdjWithPCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithPCodeRespEnvelope > Body > CalcAdjWithPCodeResponse": {
+    "type": "object",
+    "title": "CalcAdjWithPCodeResponse",
+    "xml": {
+      "name": "CalcAdjWithPCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcAdjWithPCodeResult": {
+        "$ref": "#/definitions/CalcAdjWithPCodeRespEnvelope > Body > CalcAdjWithPCodeResponse > CalcAdjWithPCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithPCodeRespEnvelope > Body > CalcAdjWithPCodeResponse > CalcAdjWithPCodeResult": {
+    "type": "object",
+    "title": "CalcAdjWithPCodeResult",
+    "xml": {
+      "name": "CalcAdjWithPCodeResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithZipAddressRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcAdjWithZipAddressResponse": {
+        "$ref": "#/definitions/CalcAdjWithZipAddressRespEnvelope > Body > CalcAdjWithZipAddressResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithZipAddressRespEnvelope > Body > CalcAdjWithZipAddressResponse": {
+    "type": "object",
+    "title": "CalcAdjWithZipAddressResponse",
+    "xml": {
+      "name": "CalcAdjWithZipAddressResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcAdjWithZipAddressResult": {
+        "$ref": "#/definitions/CalcAdjWithZipAddressRespEnvelope > Body > CalcAdjWithZipAddressResponse > CalcAdjWithZipAddressResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcAdjWithZipAddressRespEnvelope > Body > CalcAdjWithZipAddressResponse > CalcAdjWithZipAddressResult": {
+    "type": "object",
+    "title": "CalcAdjWithZipAddressResult",
+    "xml": {
+      "name": "CalcAdjWithZipAddressResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustAdjRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcCustAdjResponse": {
+        "$ref": "#/definitions/CalcCustAdjRespEnvelope > Body > CalcCustAdjResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustAdjRespEnvelope > Body > CalcCustAdjResponse": {
+    "type": "object",
+    "title": "CalcCustAdjResponse",
+    "xml": {
+      "name": "CalcCustAdjResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcCustAdjResult": {
+        "type": "boolean",
+        "title": "CalcCustAdjResult",
+        "example": true,
+        "description": "Boolean indicating success (true) or failure (false).",
+        "xml": {
+          "name": "CalcCustAdjResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustTaxesRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcCustTaxesResponse": {
+        "$ref": "#/definitions/CalcCustTaxesRespEnvelope > Body > CalcCustTaxesResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcCustTaxesRespEnvelope > Body > CalcCustTaxesResponse": {
+    "type": "object",
+    "title": "CalcCustTaxesResponse",
+    "xml": {
+      "name": "CalcCustTaxesResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcCustTaxesResult": {
+        "type": "boolean",
+        "title": "CalcCustTaxesResult",
+        "example": true,
+        "description": "Boolean indicating success (true) or failure(false).",
+        "xml": {
+          "name": "CalcCustTaxesResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcJurisdictionRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcJurisdictionResponse": {
+        "$ref": "#/definitions/CalcJurisdictionRespEnvelope > Body > CalcJurisdictionResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcJurisdictionRespEnvelope > Body > CalcJurisdictionResponse": {
+    "type": "object",
+    "title": "CalcJurisdictionResponse",
+    "xml": {
+      "name": "CalcJurisdictionResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcJurisdictionResult": {
+        "$ref": "#/definitions/CalcJurisdictionRespEnvelope > Body > CalcJurisdictionResponse > CalcJurisdictionResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcJurisdictionRespEnvelope > Body > CalcJurisdictionResponse > CalcJurisdictionResult": {
+    "type": "object",
+    "title": "CalcJurisdictionResult",
+    "xml": {
+      "name": "CalcJurisdictionResult"
+    },
+    "properties": {
+      "myValue": {
+        "type": "number",
+        "format": "uint",
+        "example": 1248900,
+        "description": "PCode for taxing jurisdiction."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedAdjRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcProRatedAdjResponse": {
+        "$ref": "#/definitions/CalcProRatedAdjRespEnvelope > Body > CalcProRatedAdjResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedAdjRespEnvelope > Body > CalcProRatedAdjResponse": {
+    "type": "object",
+    "title": "CalcProRatedAdjResponse",
+    "xml": {
+      "name": "CalcProRatedAdjResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcProRatedAdjResult": {
+        "$ref": "#/definitions/CalcProRatedAdjRespEnvelope > Body > CalcProRatedAdjResponse > CalcProRatedAdjResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedAdjRespEnvelope > Body > CalcProRatedAdjResponse > CalcProRatedAdjResult": {
+    "type": "object",
+    "title": "CalcProRatedAdjResult",
+    "xml": {
+      "name": "CalcProRatedAdjResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedTaxesRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcProRatedTaxesResponse": {
+        "$ref": "#/definitions/CalcProRatedTaxesRespEnvelope > Body > CalcProRatedTaxesResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedTaxesRespEnvelope > Body > CalcProRatedTaxesResponse": {
+    "type": "object",
+    "title": "CalcProRatedTaxesResponse",
+    "xml": {
+      "name": "CalcProRatedTaxesResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcProRatedTaxesResult": {
+        "$ref": "#/definitions/CalcProRatedTaxesRespEnvelope > Body > CalcProRatedTaxesResponse > CalcProRatedTaxesResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcProRatedTaxesRespEnvelope > Body > CalcProRatedTaxesResponse > CalcProRatedTaxesResult": {
+    "type": "object",
+    "title": "CalcProRatedTaxesResult",
+    "xml": {
+      "name": "CalcProRatedTaxesResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithFipsCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseAdjWithFipsCodeResponse": {
+        "$ref": "#/definitions/CalcReverseAdjWithFipsCodeRespEnvelope > Body > CalcReverseAdjWithFipsCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithFipsCodeRespEnvelope > Body > CalcReverseAdjWithFipsCodeResponse": {
+    "type": "object",
+    "title": "CalcReverseAdjWithFipsCodeResponse",
+    "xml": {
+      "name": "CalcReverseAdjWithFipsCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseAdjWithFipsCodeResult": {
+        "$ref": "#/definitions/CalcReverseAdjWithFipsCodeRespEnvelope > Body > CalcReverseAdjWithFipsCodeResponse > CalcReverseAdjWithFipsCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithFipsCodeRespEnvelope > Body > CalcReverseAdjWithFipsCodeResponse > CalcReverseAdjWithFipsCodeResult": {
+    "type": "object",
+    "title": "CalcReverseAdjWithFipsCodeResult",
+    "xml": {
+      "name": "CalcReverseAdjWithFipsCodeResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseAdjWithFipsCodeRespEnvelope > Body > CalcReverseAdjWithFipsCodeResponse > CalcReverseAdjWithFipsCodeResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithFipsCodeRespEnvelope > Body > CalcReverseAdjWithFipsCodeResponse > CalcReverseAdjWithFipsCodeResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithNpaNxxRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseAdjWithNpaNxxResponse": {
+        "$ref": "#/definitions/CalcReverseAdjWithNpaNxxRespEnvelope > Body > CalcReverseAdjWithNpaNxxResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithNpaNxxRespEnvelope > Body > CalcReverseAdjWithNpaNxxResponse": {
+    "type": "object",
+    "title": "CalcReverseAdjWithNpaNxxResponse",
+    "xml": {
+      "name": "CalcReverseAdjWithNpaNxxResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseAdjWithNpaNxxResult": {
+        "$ref": "#/definitions/CalcReverseAdjWithNpaNxxRespEnvelope > Body > CalcReverseAdjWithNpaNxxResponse > CalcReverseAdjWithNpaNxxResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithNpaNxxRespEnvelope > Body > CalcReverseAdjWithNpaNxxResponse > CalcReverseAdjWithNpaNxxResult": {
+    "type": "object",
+    "title": "CalcReverseAdjWithNpaNxxResult",
+    "xml": {
+      "name": "CalcReverseAdjWithNpaNxxResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseAdjWithNpaNxxRespEnvelope > Body > CalcReverseAdjWithNpaNxxResponse > CalcReverseAdjWithNpaNxxResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithNpaNxxRespEnvelope > Body > CalcReverseAdjWithNpaNxxResponse > CalcReverseAdjWithNpaNxxResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithPCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseAdjWithPCodeResponse": {
+        "$ref": "#/definitions/CalcReverseAdjWithPCodeRespEnvelope > Body > CalcReverseAdjWithPCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithPCodeRespEnvelope > Body > CalcReverseAdjWithPCodeResponse": {
+    "type": "object",
+    "title": "CalcReverseAdjWithPCodeResponse",
+    "xml": {
+      "name": "CalcReverseAdjWithPCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseAdjWithPCodeResult": {
+        "$ref": "#/definitions/CalcReverseAdjWithPCodeRespEnvelope > Body > CalcReverseAdjWithPCodeResponse > CalcReverseAdjWithPCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithPCodeRespEnvelope > Body > CalcReverseAdjWithPCodeResponse > CalcReverseAdjWithPCodeResult": {
+    "type": "object",
+    "title": "CalcReverseAdjWithPCodeResult",
+    "xml": {
+      "name": "CalcReverseAdjWithPCodeResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseAdjWithPCodeRespEnvelope > Body > CalcReverseAdjWithPCodeResponse > CalcReverseAdjWithPCodeResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithPCodeRespEnvelope > Body > CalcReverseAdjWithPCodeResponse > CalcReverseAdjWithPCodeResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithZipCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseAdjWithZipCodeResponse": {
+        "$ref": "#/definitions/CalcReverseAdjWithZipCodeRespEnvelope > Body > CalcReverseAdjWithZipCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithZipCodeRespEnvelope > Body > CalcReverseAdjWithZipCodeResponse": {
+    "type": "object",
+    "title": "CalcReverseAdjWithZipCodeResponse",
+    "xml": {
+      "name": "CalcReverseAdjWithZipCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseAdjWithZipCodeResult": {
+        "$ref": "#/definitions/CalcReverseAdjWithZipCodeRespEnvelope > Body > CalcReverseAdjWithZipCodeResponse > CalcReverseAdjWithZipCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithZipCodeRespEnvelope > Body > CalcReverseAdjWithZipCodeResponse > CalcReverseAdjWithZipCodeResult": {
+    "type": "object",
+    "title": "CalcReverseAdjWithZipCodeResult",
+    "xml": {
+      "name": "CalcReverseAdjWithZipCodeResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseAdjWithZipCodeRespEnvelope > Body > CalcReverseAdjWithZipCodeResponse > CalcReverseAdjWithZipCodeResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseAdjWithZipCodeRespEnvelope > Body > CalcReverseAdjWithZipCodeResponse > CalcReverseAdjWithZipCodeResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithFipsCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseTaxesWithFipsCodeResponse": {
+        "$ref": "#/definitions/CalcReverseTaxesWithFipsCodeRespEnvelope > Body > CalcReverseTaxesWithFipsCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithFipsCodeRespEnvelope > Body > CalcReverseTaxesWithFipsCodeResponse": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithFipsCodeResponse",
+    "xml": {
+      "name": "CalcReverseTaxesWithFipsCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseTaxesWithFipsCodeResult": {
+        "$ref": "#/definitions/CalcReverseTaxesWithFipsCodeRespEnvelope > Body > CalcReverseTaxesWithFipsCodeResponse > CalcReverseTaxesWithFipsCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithFipsCodeRespEnvelope > Body > CalcReverseTaxesWithFipsCodeResponse > CalcReverseTaxesWithFipsCodeResult": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithFipsCodeResult",
+    "xml": {
+      "name": "CalcReverseTaxesWithFipsCodeResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseTaxesWithFipsCodeRespEnvelope > Body > CalcReverseTaxesWithFipsCodeResponse > CalcReverseTaxesWithFipsCodeResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithFipsCodeRespEnvelope > Body > CalcReverseTaxesWithFipsCodeResponse > CalcReverseTaxesWithFipsCodeResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithNpaNxxRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseTaxesWithNpaNxxResponse": {
+        "$ref": "#/definitions/CalcReverseTaxesWithNpaNxxRespEnvelope > Body > CalcReverseTaxesWithNpaNxxResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithNpaNxxRespEnvelope > Body > CalcReverseTaxesWithNpaNxxResponse": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithNpaNxxResponse",
+    "xml": {
+      "name": "CalcReverseTaxesWithNpaNxxResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseTaxesWithNpaNxxResult": {
+        "$ref": "#/definitions/CalcReverseTaxesWithNpaNxxRespEnvelope > Body > CalcReverseTaxesWithNpaNxxResponse > CalcReverseTaxesWithNpaNxxResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithNpaNxxRespEnvelope > Body > CalcReverseTaxesWithNpaNxxResponse > CalcReverseTaxesWithNpaNxxResult": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithNpaNxxResult",
+    "xml": {
+      "name": "CalcReverseTaxesWithNpaNxxResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseTaxesWithNpaNxxRespEnvelope > Body > CalcReverseTaxesWithNpaNxxResponse > CalcReverseTaxesWithNpaNxxResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithNpaNxxRespEnvelope > Body > CalcReverseTaxesWithNpaNxxResponse > CalcReverseTaxesWithNpaNxxResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithPCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseTaxesWithPCodeResponse": {
+        "$ref": "#/definitions/CalcReverseTaxesWithPCodeRespEnvelope > Body > CalcReverseTaxesWithPCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithPCodeRespEnvelope > Body > CalcReverseTaxesWithPCodeResponse": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithPCodeResponse",
+    "xml": {
+      "name": "CalcReverseTaxesWithPCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseTaxesWithPCodeResult": {
+        "$ref": "#/definitions/CalcReverseTaxesWithPCodeRespEnvelope > Body > CalcReverseTaxesWithPCodeResponse > CalcReverseTaxesWithPCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithPCodeRespEnvelope > Body > CalcReverseTaxesWithPCodeResponse > CalcReverseTaxesWithPCodeResult": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithPCodeResult",
+    "xml": {
+      "name": "CalcReverseTaxesWithPCodeResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseTaxesWithPCodeRespEnvelope > Body > CalcReverseTaxesWithPCodeResponse > CalcReverseTaxesWithPCodeResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithPCodeRespEnvelope > Body > CalcReverseTaxesWithPCodeResponse > CalcReverseTaxesWithPCodeResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithZipAddressRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcReverseTaxesWithZipAddressResponse": {
+        "$ref": "#/definitions/CalcReverseTaxesWithZipAddressRespEnvelope > Body > CalcReverseTaxesWithZipAddressResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithZipAddressRespEnvelope > Body > CalcReverseTaxesWithZipAddressResponse": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithZipAddressResponse",
+    "xml": {
+      "name": "CalcReverseTaxesWithZipAddressResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcReverseTaxesWithZipAddressResult": {
+        "$ref": "#/definitions/CalcReverseTaxesWithZipAddressRespEnvelope > Body > CalcReverseTaxesWithZipAddressResponse > CalcReverseTaxesWithZipAddressResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithZipAddressRespEnvelope > Body > CalcReverseTaxesWithZipAddressResponse > CalcReverseTaxesWithZipAddressResult": {
+    "type": "object",
+    "title": "CalcReverseTaxesWithZipAddressResult",
+    "xml": {
+      "name": "CalcReverseTaxesWithZipAddressResult"
+    },
+    "properties": {
+      "BaseSaleAmount": {
+        "type": "number",
+        "format": "double",
+        "example": 85.95907,
+        "description": "The calculated base sale amount for the transaction."
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcReverseTaxesWithZipAddressRespEnvelope > Body > CalcReverseTaxesWithZipAddressResponse > CalcReverseTaxesWithZipAddressResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcReverseTaxesWithZipAddressRespEnvelope > Body > CalcReverseTaxesWithZipAddressResponse > CalcReverseTaxesWithZipAddressResult > Taxes": {
+    "type": "object",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeObject > SauTransactions": {
+    "description": "Please see 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for details.",
+    "type": "object",
+    "properties": {},
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeObject > SauAdjustments": {
+    "description": "Please see 'TM_00117_AFC SaaS Pro Sales and Use Developer Manual.pdf' for details.",
+    "type": "object",
+    "properties": {},
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeObject > Nexus": {
+    "type": "object",
+    "xml": {
+      "name": "nexus",
+      "prefix": "tem"
+    },
+    "description": "An array of zero or more nexus entries.",
+    "properties": {
+      "Nexus": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Nexus"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeObject > Exclusions": {
+    "type": "object",
+    "xml": {
+      "name": "exclusions",
+      "prefix": "tem"
+    },
+    "description": "An array of zero or more exclusions.",
+    "properties": {
+      "Exclusion": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Exclusion"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcTaxesInCustModeResponse": {
+        "$ref": "#/definitions/CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse": {
+    "type": "object",
+    "title": "CalcTaxesInCustModeResponse",
+    "xml": {
+      "name": "CalcTaxesInCustModeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcTaxesInCustModeResult": {
+        "$ref": "#/definitions/CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse > CalcTaxesInCustModeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse > CalcTaxesInCustModeResult": {
+    "type": "object",
+    "title": "CalcTaxesInCustModeResult",
+    "xml": {
+      "name": "CalcTaxesInCustModeResult",
+      "namespace": "xmlns:a=\"http://schemas.datacontract.org/2004/07/EZTaxWebService\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\""
+    },
+    "properties": {
+      "SummarizedTaxes": {
+        "$ref": "#/definitions/CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse > CalcTaxesInCustModeResult > SummarizedTaxes"
+      },
+      "Taxes": {
+        "$ref": "#/definitions/CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse > CalcTaxesInCustModeResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse > CalcTaxesInCustModeResult > SummarizedTaxes": {
+    "type": "object",
+    "title": "SummarizedTaxes",
+    "xml": {
+      "name": "SummarizedTaxes"
+    },
+    "properties": {
+      "CustomerTaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/CustomerTaxData"
+        },
+        "description": "CustomerTaxData array containing zero or more summarized taxes for the customer batch."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesInCustModeRespEnvelope > Body > CalcTaxesInCustModeResponse > CalcTaxesInCustModeResult > Taxes": {
+    "type": "object",
+    "title": "Taxes",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array containing zero or more TaxData objects for each individual transaction processed."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithFipsCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcTaxesWithFipsCodeResponse": {
+        "$ref": "#/definitions/CalcTaxesWithFipsCodeRespEnvelope > Body > CalcTaxesWithFipsCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithFipsCodeRespEnvelope > Body > CalcTaxesWithFipsCodeResponse": {
+    "type": "object",
+    "title": "CalcTaxesWithFipsCodeResponse",
+    "xml": {
+      "name": "CalcTaxesWithFipsCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcTaxesWithFipsCodeResult": {
+        "$ref": "#/definitions/CalcTaxesWithFipsCodeRespEnvelope > Body > CalcTaxesWithFipsCodeResponse > CalcTaxesWithFipsCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithFipsCodeRespEnvelope > Body > CalcTaxesWithFipsCodeResponse > CalcTaxesWithFipsCodeResult": {
+    "type": "object",
+    "title": "CalcTaxesWithFipsCodeResult",
+    "xml": {
+      "name": "CalcTaxesWithFipsCodeResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithNpaNxxRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcTaxesWithNpaNxxResponse": {
+        "$ref": "#/definitions/CalcTaxesWithNpaNxxRespEnvelope > Body > CalcTaxesWithNpaNxxResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithNpaNxxRespEnvelope > Body > CalcTaxesWithNpaNxxResponse": {
+    "type": "object",
+    "title": "CalcTaxesWithNpaNxxResponse",
+    "xml": {
+      "name": "CalcTaxesWithNpaNxxResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcTaxesWithNpaNxxResult": {
+        "$ref": "#/definitions/CalcTaxesWithNpaNxxRespEnvelope > Body > CalcTaxesWithNpaNxxResponse > CalcTaxesWithNpaNxxResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithNpaNxxRespEnvelope > Body > CalcTaxesWithNpaNxxResponse > CalcTaxesWithNpaNxxResult": {
+    "type": "object",
+    "title": "CalcTaxesWithNpaNxxResult",
+    "xml": {
+      "name": "CalcTaxesWithNpaNxxResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithOverridesRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcTaxesWithOverridesResponse": {
+        "$ref": "#/definitions/CalcTaxesWithOverridesRespEnvelope > Body > CalcTaxesWithOverridesResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithOverridesRespEnvelope > Body > CalcTaxesWithOverridesResponse": {
+    "type": "object",
+    "title": "CalcTaxesWithOverridesResponse",
+    "xml": {
+      "name": "CalcTaxesWithOverridesResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcTaxesWithOverridesResult": {
+        "$ref": "#/definitions/CalcTaxesWithOverridesRespEnvelope > Body > CalcTaxesWithOverridesResponse > CalcTaxesWithOverridesResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithOverridesRespEnvelope > Body > CalcTaxesWithOverridesResponse > CalcTaxesWithOverridesResult": {
+    "type": "object",
+    "title": "CalcTaxesWithOverridesResult",
+    "xml": {
+      "name": "CalcTaxesWithOverridesResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithPCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcTaxesWithPCodeResponse": {
+        "$ref": "#/definitions/CalcTaxesWithPCodeRespEnvelope > Body > CalcTaxesWithPCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithPCodeRespEnvelope > Body > CalcTaxesWithPCodeResponse": {
+    "type": "object",
+    "title": "CalcTaxesWithPCodeResponse",
+    "xml": {
+      "name": "CalcTaxesWithPCodeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcTaxesWithPCodeResult": {
+        "$ref": "#/definitions/CalcTaxesWithPCodeRespEnvelope > Body > CalcTaxesWithPCodeResponse > CalcTaxesWithPCodeResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithPCodeRespEnvelope > Body > CalcTaxesWithPCodeResponse > CalcTaxesWithPCodeResult": {
+    "type": "object",
+    "title": "CalcTaxesWithPCodeResult",
+    "xml": {
+      "name": "CalcTaxesWithPCodeResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithZipAddressRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CalcTaxesWithZipAddressResponse": {
+        "$ref": "#/definitions/CalcTaxesWithZipAddressRespEnvelope > Body > CalcTaxesWithZipAddressResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithZipAddressRespEnvelope > Body > CalcTaxesWithZipAddressResponse": {
+    "type": "object",
+    "title": "CalcTaxesWithZipAddressResponse",
+    "xml": {
+      "name": "CalcTaxesWithZipAddressResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CalcTaxesWithZipAddressResult": {
+        "$ref": "#/definitions/CalcTaxesWithZipAddressRespEnvelope > Body > CalcTaxesWithZipAddressResponse > CalcTaxesWithZipAddressResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CalcTaxesWithZipAddressRespEnvelope > Body > CalcTaxesWithZipAddressResponse > CalcTaxesWithZipAddressResult": {
+    "type": "object",
+    "title": "CalcTaxesWithZipAddressResult",
+    "xml": {
+      "name": "CalcTaxesWithZipAddressResult"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array of TaxData objects containing the returned tax data."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "FipsToPCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "FipsToPCodeResponse": {
+        "$ref": "#/definitions/FipsToPCodeRespEnvelope > Body > FipsToPCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "FipsToPCodeRespEnvelope > Body > FipsToPCodeResponse": {
+    "type": "object",
+    "title": "FipsToPCodeResponse",
+    "xml": {
+      "name": "FipsToPCodeResponse"
+    },
+    "required": [
+      "FipsToPCodeResult"
+    ],
+    "properties": {
+      "FipsToPCodeResult": {
+        "type": "number",
+        "format": "integer",
+        "example": 2604100,
+        "description": "The PCode corresponding to the FIPS value sent via the Request."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetAddressRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetAddressResponse": {
+        "$ref": "#/definitions/GetAddressRespEnvelope > Body > GetAddressResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetAddressRespEnvelope > Body > GetAddressResponse": {
+    "type": "object",
+    "title": "GetAddressResponse",
+    "xml": {
+      "name": "GetAddressResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "required": [
+      "GetAddressResult"
+    ],
+    "properties": {
+      "GetAddressResult": {
+        "type": "array",
+        "description": "Array of addresses.",
+        "items": {
+          "$ref": "#/definitions/AddressDataArray"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CreateReportRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "CreateReportResponse": {
+        "$ref": "#/definitions/CreateReportRespEnvelope > Body > CreateReportResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "CreateReportRespEnvelope > Body > CreateReportResponse": {
+    "type": "object",
+    "title": "CreateReportResponse",
+    "xml": {
+      "name": "CreateReportResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "CreateReportResult": {
+        "type": "boolean",
+        "example": true,
+        "description": "Submission status.",
+        "title": "CreateReportResult",
+        "xml": {
+          "name": "CreateReportResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetEZTaxDbVersionRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetEZTaxDbVersionResponse": {
+        "$ref": "#/definitions/GetEZTaxDbVersionRespEnvelope > Body > GetEZTaxDbVersionResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetEZTaxDbVersionRespEnvelope > Body > GetEZTaxDbVersionResponse": {
+    "type": "object",
+    "title": "GetEZTaxDbVersionResponse",
+    "xml": {
+      "name": "GetEZTaxDbVersionResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "required": [
+      "GetEZTaxDbVersionResult"
+    ],
+    "properties": {
+      "GetEZTaxDbVersionResult": {
+        "type": "string",
+        "format": "Major Version.Minor Version.Build YYMM.Build Release",
+        "example": "9.15.1610.1",
+        "description": "The version of the underlying AFC database used by the AFC engine.",
+        "xml": {
+          "name": "GetEZTaxDbVersionResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetEZTaxVersionRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetEZTaxVersionResponse": {
+        "$ref": "#/definitions/GetEZTaxVersionRespEnvelope > Body > GetEZTaxVersionResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetEZTaxVersionRespEnvelope > Body > GetEZTaxVersionResponse": {
+    "type": "object",
+    "title": "GetEZTaxVersionResponse",
+    "xml": {
+      "name": "GetEZTaxVersionResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "required": [
+      "GetEZTaxVersionResult"
+    ],
+    "properties": {
+      "GetEZTaxVersionResult": {
+        "type": "string",
+        "format": "Major Version.Minor Version.Build YYMM.Build Release",
+        "example": "9.15.1609.1",
+        "description": "The tax engine version.",
+        "xml": {
+          "name": "GetEZTaxVersionResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetOptionalFieldKeyDescRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetOptionalFieldKeyDescResponse": {
+        "$ref": "#/definitions/GetOptionalFieldKeyDescRespEnvelope > Body > GetOptionalFieldKeyDescResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetOptionalFieldKeyDescRespEnvelope > Body > GetOptionalFieldKeyDescResponse": {
+    "type": "object",
+    "title": "GetOptionalFieldKeyDescResponse",
+    "xml": {
+      "name": "GetOptionalFieldKeyDescResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "GetOptionalFieldKeyDescResult": {
+        "$ref": "#/definitions/GetOptionalFieldKeyDescRespEnvelope > Body > GetOptionalFieldKeyDescResponse > GetOptionalFieldKeyDescResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetOptionalFieldKeyDescRespEnvelope > Body > GetOptionalFieldKeyDescResponse > GetOptionalFieldKeyDescResult": {
+    "type": "object",
+    "title": "GetOptionalFieldKeyDescResult",
+    "xml": {
+      "name": "GetOptionalFieldKeyDescResult",
+      "namespace": "xmlns:a=\"http://schemas.datacontract.org/2004/07/EZTaxWebService\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\""
+    },
+    "properties": {
+      "OptionalKey": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/OptionalKeyData"
+        },
+        "description": "An array of Optional Field Key Description objects containing the optional field key information."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetServerTimeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetServerTimeResponse": {
+        "$ref": "#/definitions/GetServerTimeRespEnvelope > Body > GetServerTimeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetServerTimeRespEnvelope > Body > GetServerTimeResponse": {
+    "type": "object",
+    "title": "GetServerTimeResponse",
+    "xml": {
+      "name": "GetServerTimeResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "required": [
+      "GetServerTimeResult"
+    ],
+    "properties": {
+      "GetServerTimeResult": {
+        "title": "GetServerTimeResult",
+        "xml": {
+          "name": "GetServerTimeResult"
+        },
+        "type": "string",
+        "format": "date-time",
+        "example": "2016-09-22T19:18:50.389Z",
+        "description": "A formatted date-time string of the current server time."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxCategoryRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetTaxCategoryResponse": {
+        "$ref": "#/definitions/GetTaxCategoryRespEnvelope > Body > GetTaxCategoryResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxCategoryRespEnvelope > Body > GetTaxCategoryResponse": {
+    "type": "object",
+    "title": "GetTaxCategoryResponse",
+    "xml": {
+      "name": "GetTaxCategoryResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "required": [
+      "GetTaxCategoryResult"
+    ],
+    "properties": {
+      "GetTaxCategoryResult": {
+        "type": "string",
+        "description": "The string describing the tax category.",
+        "example": "SALES AND USE TAXES"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxDescriptionRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetTaxDescriptionResponse": {
+        "$ref": "#/definitions/GetTaxDescriptionRespEnvelope > Body > GetTaxDescriptionResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxDescriptionRespEnvelope > Body > GetTaxDescriptionResponse": {
+    "type": "object",
+    "title": "GetTaxDescriptionResponse",
+    "xml": {
+      "name": "GetTaxDescriptionResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "required": [
+      "GetTaxDescriptionResult"
+    ],
+    "properties": {
+      "GetTaxDescriptionResult": {
+        "type": "string",
+        "description": "The string describing the specified tax type.",
+        "example": "Sales Tax"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxRatesRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetTaxRatesResponse": {
+        "$ref": "#/definitions/GetTaxRatesRespEnvelope > Body > GetTaxRatesResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxRatesRespEnvelope > Body > GetTaxRatesResponse": {
+    "type": "object",
+    "title": "GetTaxRatesResponse",
+    "xml": {
+      "name": "GetTaxRatesResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "GetTaxRatesResult": {
+        "$ref": "#/definitions/GetTaxRatesRespEnvelope > Body > GetTaxRatesResponse > GetTaxRatesResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetTaxRatesRespEnvelope > Body > GetTaxRatesResponse > GetTaxRatesResult": {
+    "type": "object",
+    "title": "GetTaxRatesResult",
+    "xml": {
+      "name": "GetTaxRatesResult"
+    },
+    "properties": {
+      "TaxRateInfo": {
+        "type": "array",
+        "xml": {
+          "prefix": "a"
+        },
+        "items": {
+          "$ref": "#/definitions/TaxRateInfo"
+        },
+        "description": "Tax rate information for the specified jurisdiction."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetVersionRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "GetVersionResponse": {
+        "$ref": "#/definitions/GetVersionRespEnvelope > Body > GetVersionResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "GetVersionRespEnvelope > Body > GetVersionResponse": {
+    "type": "object",
+    "title": "GetVersionResponse",
+    "xml": {
+      "name": "GetVersionResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "required": [
+      "GetVersionResult"
+    ],
+    "properties": {
+      "GetVersionResult": {
+        "type": "string",
+        "format": "Major Version.Minor Version.Build YYMM.Build Release",
+        "example": "2.15.1606.1",
+        "description": "AFC SaaS Pro Web Service version.",
+        "xml": {
+          "name": "GetVersionResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "NpaNxxToPCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "NpaNxxToPCodeResponse": {
+        "$ref": "#/definitions/NpaNxxToPCodeRespEnvelope > Body > NpaNxxToPCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "NpaNxxToPCodeRespEnvelope > Body > NpaNxxToPCodeResponse": {
+    "type": "object",
+    "title": "NpaNxxToPCodeResponse",
+    "xml": {
+      "name": "NpaNxxToPCodeResponse"
+    },
+    "required": [
+      "NpaNxxToPCodeResult"
+    ],
+    "properties": {
+      "NpaNxxToPCodeResult": {
+        "type": "number",
+        "format": "integer",
+        "example": 4482200,
+        "description": "The PCode corresponding to the NpaNxx value sent via the Request."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "PCodeToFipsRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "PCodeToFipsResponse": {
+        "$ref": "#/definitions/PCodeToFipsRespEnvelope > Body > PCodeToFipsResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "PCodeToFipsRespEnvelope > Body > PCodeToFipsResponse": {
+    "title": "PCodeToFipsResponse",
+    "xml": {
+      "name": "PCodeToFipsResponse"
+    },
+    "required": [
+      "PCodeToFipsResult"
+    ],
+    "properties": {
+      "PCodeToFipsResult": {
+        "type": "number",
+        "format": "integer",
+        "example": 3606184094,
+        "description": "The FIPS code corresponding to the PCode value sent via the Request."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchObject > Nexus": {
+    "type": "object",
+    "xml": {
+      "name": "nexus",
+      "prefix": "tem"
+    },
+    "description": "An array of zero or more nexus entries.",
+    "properties": {
+      "Nexus": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Nexus"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchObject > Exclusions": {
+    "type": "object",
+    "xml": {
+      "name": "exclusions",
+      "prefix": "tem"
+    },
+    "description": "An array of zero or more exclusions.",
+    "properties": {
+      "Exclusion": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Exclusion"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "ProcessCustomerBatchResponse": {
+        "$ref": "#/definitions/ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse": {
+    "type": "object",
+    "title": "ProcessCustomerBatchResponse",
+    "xml": {
+      "name": "ProcessCustomerBatchResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "ProcessCustomerBatchResult": {
+        "$ref": "#/definitions/ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse > ProcessCustomerBatchResult"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse > ProcessCustomerBatchResult": {
+    "type": "object",
+    "title": "ProcessCustomerBatchResult",
+    "xml": {
+      "name": "ProcessCustomerBatchResult"
+    },
+    "properties": {
+      "SummarizedTaxes": {
+        "$ref": "#/definitions/ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse > ProcessCustomerBatchResult > SummarizedTaxes"
+      },
+      "Taxes": {
+        "$ref": "#/definitions/ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse > ProcessCustomerBatchResult > Taxes"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse > ProcessCustomerBatchResult > SummarizedTaxes": {
+    "type": "object",
+    "title": "SummarizedTaxes",
+    "xml": {
+      "name": "SummarizedTaxes"
+    },
+    "properties": {
+      "CustomerTaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/CustomerTaxData"
+        },
+        "description": "CustomerTaxData array containing zero or more summarized taxes for the customer batch."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ProcessCustomerBatchRespEnvelope > Body > ProcessCustomerBatchResponse > ProcessCustomerBatchResult > Taxes": {
+    "type": "object",
+    "title": "Taxes",
+    "xml": {
+      "name": "Taxes"
+    },
+    "properties": {
+      "TaxData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TaxData"
+        },
+        "description": "An array containing zero or more TaxData objects for each individual transaction processed."
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "UpdateOptionalFieldKeyDescRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "UpdateOptionalFieldKeyDescResponse": {
+        "$ref": "#/definitions/UpdateOptionalFieldKeyDescRespEnvelope > Body > UpdateOptionalFieldKeyDescResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "UpdateOptionalFieldKeyDescRespEnvelope > Body > UpdateOptionalFieldKeyDescResponse": {
+    "type": "object",
+    "title": "UpdateOptionalFieldKeyDescResponse",
+    "xml": {
+      "name": "UpdateOptionalFieldKeyDescResponse",
+      "namespace": "http://tempuri.org/"
+    },
+    "properties": {
+      "UpdateOptionalFieldKeyDescResult": {
+        "type": "boolean",
+        "title": "UpdateOptionalFieldKeyDescResult",
+        "example": true,
+        "description": "Boolean indicating success (true) or failure (false).",
+        "xml": {
+          "name": "UpdateOptionalFieldKeyDescResult"
+        }
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ZipToPCodeRespEnvelope > Body": {
+    "type": "object",
+    "properties": {
+      "ZipToPCodeResponse": {
+        "$ref": "#/definitions/ZipToPCodeRespEnvelope > Body > ZipToPCodeResponse"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "ZipToPCodeRespEnvelope > Body > ZipToPCodeResponse": {
+    "type": "object",
+    "title": "ZipToPCodeResponse",
+    "xml": {
+      "name": "ZipToPCodeResponse"
+    },
+    "required": [
+      "ZipToPCodeResult"
+    ],
+    "properties": {
+      "ZipToPCodeResult": {
+        "type": "number",
+        "format": "integer",
+        "example": 2604100,
+        "description": "The PCode corresponding to the zip address submitted via the Request."
+      }
+    },
+    "x-methods-used-in": []
+  }
+}

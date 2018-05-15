@@ -1,0 +1,23 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "AddLines": "/api-reference/avatax/rest/v2/methods/Transactions/AddLines",
+    "AdjustTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/AdjustTransaction",
+    "AuditTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/AuditTransaction",
+    "AuditTransactionWithType": "/api-reference/avatax/rest/v2/methods/Transactions/AuditTransactionWithType",
+    "BulkLockTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/BulkLockTransaction",
+    "ChangeTransactionCode": "/api-reference/avatax/rest/v2/methods/Transactions/ChangeTransactionCode",
+    "CommitTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction",
+    "CreateOrAdjustTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/CreateOrAdjustTransaction",
+    "CreateTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction",
+    "DeleteLines": "/api-reference/avatax/rest/v2/methods/Transactions/DeleteLines",
+    "GetTransactionByCode": "/api-reference/avatax/rest/v2/methods/Transactions/GetTransactionByCode",
+    "GetTransactionByCodeAndType": "/api-reference/avatax/rest/v2/methods/Transactions/GetTransactionByCodeAndType",
+    "GetTransactionById": "/api-reference/avatax/rest/v2/methods/Transactions/GetTransactionById",
+    "ListTransactionsByCompany": "/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany",
+    "LockTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/LockTransaction",
+    "RefundTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction",
+    "SettleTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/SettleTransaction",
+    "UncommitTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/UncommitTransaction",
+    "VerifyTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction",
+    "VoidTransaction": "/api-reference/avatax/rest/v2/methods/Transactions/VoidTransaction"
+}

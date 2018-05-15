@@ -1,0 +1,5 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "ResolveAddress": "/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress",
+    "ResolveAddressPost": "/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost"
+}

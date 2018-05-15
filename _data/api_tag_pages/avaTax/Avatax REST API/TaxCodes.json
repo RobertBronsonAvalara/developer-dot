@@ -1,0 +1,9 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateTaxCodes": "/api-reference/avatax/rest/v2/methods/TaxCodes/CreateTaxCodes",
+    "DeleteTaxCode": "/api-reference/avatax/rest/v2/methods/TaxCodes/DeleteTaxCode",
+    "GetTaxCode": "/api-reference/avatax/rest/v2/methods/TaxCodes/GetTaxCode",
+    "ListTaxCodesByCompany": "/api-reference/avatax/rest/v2/methods/TaxCodes/ListTaxCodesByCompany",
+    "QueryTaxCodes": "/api-reference/avatax/rest/v2/methods/TaxCodes/QueryTaxCodes",
+    "UpdateTaxCode": "/api-reference/avatax/rest/v2/methods/TaxCodes/UpdateTaxCode"
+}

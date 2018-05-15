@@ -2,6 +2,7 @@
 layout: post
 title: Troubleshooting Connectivity Problems
 description: Ways to diagnose problems with connecting to AvaTax
+relevantapimethods: Ping
 date: 2017-05-15 12:00
 author: Charlie Morrisette
 comments: true

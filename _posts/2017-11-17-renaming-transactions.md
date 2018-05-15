@@ -2,6 +2,7 @@
 layout: post
 title: Renaming Transactions
 description: Renaming Transactions
+relevantapimethods: CreateTransaction
 date: 2017-11-14 12:00
 author: Mark Withers
 comments: true

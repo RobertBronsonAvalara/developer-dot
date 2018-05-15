@@ -1,0 +1,6 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "RequestFreeTrial": "/api-reference/avatax/rest/v2/methods/Free/RequestFreeTrial",
+    "TaxRatesByAddress": "/api-reference/avatax/rest/v2/methods/Free/TaxRatesByAddress",
+    "TaxRatesByPostalCode": "/api-reference/avatax/rest/v2/methods/Free/TaxRatesByPostalCode"
+}

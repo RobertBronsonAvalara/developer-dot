@@ -2,6 +2,7 @@
 layout: post
 title: How to Handle Freight & Handling Charges
 description: How to incorporate shipping and handling charges in your tax request
+relevantapimethods: CreateTransaction
 date: 2017-05-26 12:00
 author: Bob Erdman
 comments: true

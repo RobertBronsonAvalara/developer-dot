@@ -1,0 +1,18 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "ChangeFilingStatus": "/api-reference/avatax/rest/v2/methods/Companies/ChangeFilingStatus",
+    "CompanyInitialize": "/api-reference/avatax/rest/v2/methods/Companies/CompanyInitialize",
+    "CreateCompanies": "/api-reference/avatax/rest/v2/methods/Companies/CreateCompanies",
+    "CreateFundingRequest": "/api-reference/avatax/rest/v2/methods/Companies/CreateFundingRequest",
+    "DeleteCompany": "/api-reference/avatax/rest/v2/methods/Companies/DeleteCompany",
+    "FundingConfigurationByCompany": "/api-reference/avatax/rest/v2/methods/Companies/FundingConfigurationByCompany",
+    "FundingConfigurationsByCompanyAndCurrency": "/api-reference/avatax/rest/v2/methods/Companies/FundingConfigurationsByCompanyAndCurrency",
+    "GetCompany": "/api-reference/avatax/rest/v2/methods/Companies/GetCompany",
+    "GetCompanyConfiguration": "/api-reference/avatax/rest/v2/methods/Companies/GetCompanyConfiguration",
+    "GetFilingStatus": "/api-reference/avatax/rest/v2/methods/Companies/GetFilingStatus",
+    "ListFundingRequestsByCompany": "/api-reference/avatax/rest/v2/methods/Companies/ListFundingRequestsByCompany",
+    "ListMrsCompanies": "/api-reference/avatax/rest/v2/methods/Companies/ListMrsCompanies",
+    "QueryCompanies": "/api-reference/avatax/rest/v2/methods/Companies/QueryCompanies",
+    "SetCompanyConfiguration": "/api-reference/avatax/rest/v2/methods/Companies/SetCompanyConfiguration",
+    "UpdateCompany": "/api-reference/avatax/rest/v2/methods/Companies/UpdateCompany"
+}

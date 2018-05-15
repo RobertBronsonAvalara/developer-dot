@@ -2,6 +2,7 @@
 layout: post
 title: Calculating TaxIncluded
 description: Calculating TaxIncluded    
+relevantapimethods: CreateTransaction
 date: 2017-11-8 12:00
 author: Ted Spence
 comments: true

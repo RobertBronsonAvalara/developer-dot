@@ -1,0 +1,268 @@
+{
+  "PostItemsError": {
+    "type": "object",
+    "description": "Object containing the error details that occurred when processing items",
+    "example": {
+      "keyword": "type",
+      "dataPath": ".items[0].shippingTax",
+      "message": "should be number",
+      "schema": "number",
+      "data": ".00"
+    },
+    "properties": {
+      "keyword": {
+        "type": "string",
+        "description": "Type of error",
+        "example": "format"
+      },
+      "dataPath": {
+        "type": "string",
+        "description": "Location of error in posted items array",
+        "example": ".items[0].orderDate"
+      },
+      "message": {
+        "type": "string",
+        "description": "Error message",
+        "example": "should match format dateTime"
+      },
+      "schema": {
+        "type": "string",
+        "description": "The format type that is expected in the item schema",
+        "example": "dateTime"
+      },
+      "data": {
+        "type": "string",
+        "description": "Offending value",
+        "example": "2000-30-30"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "PostItemsBody": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "example": [
+          {
+            "itemId": "3002987",
+            "transactionDate": "2014-12-09T09:53:59",
+            "shipToAddress": {
+              "line1": "4077 West Clinton Avenue",
+              "city": "Fresno",
+              "state": "CA",
+              "zip": "93722"
+            },
+            "shippingAmount": 30,
+            "shippingTax": 3.29,
+            "salesAmount": 514.99,
+            "salesTax": 42.36,
+            "description": "Feenn Ruby Brooch",
+            "refund": false
+          },
+          {
+            "itemId": "3004342",
+            "transactionDate": "2014-11-09T09:53:59",
+            "shipToAddress": {
+              "line1": "4077 West Clinton Avenue",
+              "city": "Fresno",
+              "state": "CA",
+              "zip": "93722"
+            },
+            "shippingAmount": 20,
+            "shippingTax": 2.29,
+            "salesAmount": 420.99,
+            "salesTax": 38.36,
+            "description": "Ruby necklace",
+            "refund": false
+          }
+        ],
+        "items": {
+          "$ref": "#/definitions/Item"
+        }
+      }
+    },
+    "x-methods-used-in": [
+      "PostItems"
+    ]
+  },
+  "Company": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "syncDate": {
+        "type": "string"
+      },
+      "phone": {
+        "type": "string"
+      },
+      "fax": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "string"
+      },
+      "updatedAt": {
+        "type": "string"
+      },
+      "address": {
+        "description": "This address is used as the default shipFromAddress for an item if one is not provided",
+        "$ref": "#/definitions/Address"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "Address": {
+    "type": "object",
+    "example": {
+      "line1": "1000 W Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98101"
+    },
+    "properties": {
+      "line1": {
+        "type": "string"
+      },
+      "line2": {
+        "type": "string"
+      },
+      "line3": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "zip": {
+        "type": "string"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "Item": {
+    "type": "object",
+    "required": [
+      "itemId",
+      "transactionDate",
+      "shipToAddress",
+      "salesAmount",
+      "salesTax",
+      "shippingAmount",
+      "shippingTax",
+      "refund"
+    ],
+    "properties": {
+      "itemId": {
+        "type": "string",
+        "example": "3002987"
+      },
+      "transactionDate": {
+        "type": "string",
+        "format": "date-time",
+        "example": "2014-12-09T09:53:59"
+      },
+      "shipFromAddress": {
+        "$ref": "#/definitions/Item > ShipFromAddress"
+      },
+      "shipToAddress": {
+        "$ref": "#/definitions/Item > ShipToAddress"
+      },
+      "shippingAmount": {
+        "type": "number",
+        "format": "double",
+        "description": "Shipping cost (not including taxes)",
+        "example": 30
+      },
+      "shippingTax": {
+        "type": "number",
+        "format": "double",
+        "example": 3.29
+      },
+      "salesAmount": {
+        "type": "number",
+        "format": "double",
+        "description": "Item cost (not including shipping or taxes)",
+        "example": 514.99
+      },
+      "salesTax": {
+        "type": "number",
+        "format": "double",
+        "example": 42.36
+      },
+      "description": {
+        "type": "string",
+        "example": "Feenn Ruby Brooch"
+      },
+      "refund": {
+        "type": "boolean",
+        "example": false
+      },
+      "reviewRequired": {
+        "type": "boolean",
+        "description": "Determines whether the user needs to review this item. This would be done when there are questions regarding whether the assumptions made by the connector result in the correct sales/refund/tax. Submitting this item as 'true' will make TrustFile flag the item to show to the user for approval."
+      },
+      "reviewMessage": {
+        "type": "string",
+        "description": "Message to show the user as to what they should review"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "Item > ShipFromAddress": {
+    "type": "object",
+    "example": {
+      "line1": "1000 W Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98101"
+    },
+    "properties": {
+      "line1": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "zip": {
+        "type": "string"
+      }
+    },
+    "x-methods-used-in": []
+  },
+  "Item > ShipToAddress": {
+    "type": "object",
+    "required": [
+      "state",
+      "zip"
+    ],
+    "example": {
+      "line1": "1000 W Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98101"
+    },
+    "properties": {
+      "line1": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "zip": {
+        "type": "string"
+      }
+    },
+    "x-methods-used-in": []
+  }
+}

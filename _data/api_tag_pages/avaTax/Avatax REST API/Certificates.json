@@ -1,0 +1,18 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateCertificates": "/api-reference/avatax/rest/v2/methods/Certificates/CreateCertificates",
+    "DeleteCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/DeleteCertificate",
+    "DownloadCertificateImage": "/api-reference/avatax/rest/v2/methods/Certificates/DownloadCertificateImage",
+    "GetCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/GetCertificate",
+    "GetCertificateSetup": "/api-reference/avatax/rest/v2/methods/Certificates/GetCertificateSetup",
+    "LinkAttributesToCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/LinkAttributesToCertificate",
+    "LinkCustomersToCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/LinkCustomersToCertificate",
+    "ListAttributesForCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/ListAttributesForCertificate",
+    "ListCustomersForCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/ListCustomersForCertificate",
+    "QueryCertificates": "/api-reference/avatax/rest/v2/methods/Certificates/QueryCertificates",
+    "RequestCertificateSetup": "/api-reference/avatax/rest/v2/methods/Certificates/RequestCertificateSetup",
+    "UnlinkAttributesFromCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/UnlinkAttributesFromCertificate",
+    "UnlinkCustomersFromCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/UnlinkCustomersFromCertificate",
+    "UpdateCertificate": "/api-reference/avatax/rest/v2/methods/Certificates/UpdateCertificate",
+    "UploadCertificateImage": "/api-reference/avatax/rest/v2/methods/Certificates/UploadCertificateImage"
+}

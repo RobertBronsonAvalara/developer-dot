@@ -1,0 +1,8 @@
+{
+    "home": "api-reference/avatax/rest/v1",
+    "cancelTax": "/api-reference/avatax/rest/v1/methods/cancelTax",
+    "estimateTax": "/api-reference/avatax/rest/v1/methods/estimateTax",
+    "getTax": "/api-reference/avatax/rest/v1/methods/getTax",
+    "validateAddress": "/api-reference/avatax/rest/v1/methods/validateAddress",
+    "Models": "/api-reference/avatax/rest/v1/models"
+}

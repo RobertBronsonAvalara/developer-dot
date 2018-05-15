@@ -1,0 +1,12 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "ApproveAdvancedRuleScript": "/api-reference/avatax/rest/v2/methods/AdvancedRules/ApproveAdvancedRuleScript",
+    "CreateAdvancedRuleScript": "/api-reference/avatax/rest/v2/methods/AdvancedRules/CreateAdvancedRuleScript",
+    "CreateAdvancedRuleTable": "/api-reference/avatax/rest/v2/methods/AdvancedRules/CreateAdvancedRuleTable",
+    "DeleteAdvancedRuleScript": "/api-reference/avatax/rest/v2/methods/AdvancedRules/DeleteAdvancedRuleScript",
+    "DeleteAdvancedRuleTable": "/api-reference/avatax/rest/v2/methods/AdvancedRules/DeleteAdvancedRuleTable",
+    "GetAdvancedRuleScript": "/api-reference/avatax/rest/v2/methods/AdvancedRules/GetAdvancedRuleScript",
+    "GetAdvancedRuleTable": "/api-reference/avatax/rest/v2/methods/AdvancedRules/GetAdvancedRuleTable",
+    "GetAdvancedRuleTables": "/api-reference/avatax/rest/v2/methods/AdvancedRules/GetAdvancedRuleTables",
+    "UnapproveAdvancedRuleScript": "/api-reference/avatax/rest/v2/methods/AdvancedRules/UnapproveAdvancedRuleScript"
+}

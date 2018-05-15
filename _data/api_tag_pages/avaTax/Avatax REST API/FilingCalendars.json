@@ -1,0 +1,23 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "ApproveFilingRequest": "/api-reference/avatax/rest/v2/methods/FilingCalendars/ApproveFilingRequest",
+    "CancelFilingRequest": "/api-reference/avatax/rest/v2/methods/FilingCalendars/CancelFilingRequest",
+    "CancelFilingRequests": "/api-reference/avatax/rest/v2/methods/FilingCalendars/CancelFilingRequests",
+    "CreateFilingCalendars": "/api-reference/avatax/rest/v2/methods/FilingCalendars/CreateFilingCalendars",
+    "CreateFilingRequests": "/api-reference/avatax/rest/v2/methods/FilingCalendars/CreateFilingRequests",
+    "CycleSafeAdd": "/api-reference/avatax/rest/v2/methods/FilingCalendars/CycleSafeAdd",
+    "CycleSafeEdit": "/api-reference/avatax/rest/v2/methods/FilingCalendars/CycleSafeEdit",
+    "CycleSafeExpiration": "/api-reference/avatax/rest/v2/methods/FilingCalendars/CycleSafeExpiration",
+    "DeleteFilingCalendar": "/api-reference/avatax/rest/v2/methods/FilingCalendars/DeleteFilingCalendar",
+    "GetFilingCalendar": "/api-reference/avatax/rest/v2/methods/FilingCalendars/GetFilingCalendar",
+    "GetFilingRequest": "/api-reference/avatax/rest/v2/methods/FilingCalendars/GetFilingRequest",
+    "ListFilingCalendars": "/api-reference/avatax/rest/v2/methods/FilingCalendars/ListFilingCalendars",
+    "ListFilingRequests": "/api-reference/avatax/rest/v2/methods/FilingCalendars/ListFilingRequests",
+    "LoginVerificationRequest": "/api-reference/avatax/rest/v2/methods/FilingCalendars/LoginVerificationRequest",
+    "LoginVerificationStatus": "/api-reference/avatax/rest/v2/methods/FilingCalendars/LoginVerificationStatus",
+    "QueryFilingCalendars": "/api-reference/avatax/rest/v2/methods/FilingCalendars/QueryFilingCalendars",
+    "QueryFilingRequests": "/api-reference/avatax/rest/v2/methods/FilingCalendars/QueryFilingRequests",
+    "RequestFilingCalendarUpdate": "/api-reference/avatax/rest/v2/methods/FilingCalendars/RequestFilingCalendarUpdate",
+    "UpdateFilingCalendar": "/api-reference/avatax/rest/v2/methods/FilingCalendars/UpdateFilingCalendar",
+    "UpdateFilingRequest": "/api-reference/avatax/rest/v2/methods/FilingCalendars/UpdateFilingRequest"
+}

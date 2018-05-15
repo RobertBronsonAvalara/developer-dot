@@ -1,0 +1,8 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateAvaFileForms": "/api-reference/avatax/rest/v2/methods/AvaFileForms/CreateAvaFileForms",
+    "DeleteAvaFileForm": "/api-reference/avatax/rest/v2/methods/AvaFileForms/DeleteAvaFileForm",
+    "GetAvaFileForm": "/api-reference/avatax/rest/v2/methods/AvaFileForms/GetAvaFileForm",
+    "QueryAvaFileForms": "/api-reference/avatax/rest/v2/methods/AvaFileForms/QueryAvaFileForms",
+    "UpdateAvaFileForm": "/api-reference/avatax/rest/v2/methods/AvaFileForms/UpdateAvaFileForm"
+}

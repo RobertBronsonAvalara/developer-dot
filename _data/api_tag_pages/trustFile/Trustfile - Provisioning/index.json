@@ -1,0 +1,6 @@
+{
+    "home": "api-reference/trustfile/app",
+    "GetCompany": "/api-reference/trustfile/app/methods/GetCompany",
+    "PostCompanySignup": "/api-reference/trustfile/app/methods/PostCompanySignup",
+    "Models": "/api-reference/trustfile/app/models"
+}

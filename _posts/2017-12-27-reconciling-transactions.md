@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reconciling Transactions
+relevantapimethods: ListTransactionsByCompany, VerifyTransaction
 date: 2017-12-27 16:00
 author: Mark Withers
 comments: true

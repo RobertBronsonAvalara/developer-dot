@@ -1,0 +1,13 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "AdjustMultiDocumentTransaction": "/api-reference/avatax/rest/v2/methods/MultiDocument/AdjustMultiDocumentTransaction",
+    "AuditMultiDocumentTransaction": "/api-reference/avatax/rest/v2/methods/MultiDocument/AuditMultiDocumentTransaction",
+    "CommitMultiDocumentTransaction": "/api-reference/avatax/rest/v2/methods/MultiDocument/CommitMultiDocumentTransaction",
+    "CreateMultiDocumentTransaction": "/api-reference/avatax/rest/v2/methods/MultiDocument/CreateMultiDocumentTransaction",
+    "GetMultiDocumentTransactionByCodeAndType": "/api-reference/avatax/rest/v2/methods/MultiDocument/GetMultiDocumentTransactionByCodeAndType",
+    "GetMultiDocumentTransactionById": "/api-reference/avatax/rest/v2/methods/MultiDocument/GetMultiDocumentTransactionById",
+    "ListMultiDocumentTransactions": "/api-reference/avatax/rest/v2/methods/MultiDocument/ListMultiDocumentTransactions",
+    "RefundMultiDocumentTransaction": "/api-reference/avatax/rest/v2/methods/MultiDocument/RefundMultiDocumentTransaction",
+    "VerifyMultiDocumentTransaction": "/api-reference/avatax/rest/v2/methods/MultiDocument/VerifyMultiDocumentTransaction",
+    "VoidMultiDocumentTransaction": "/api-reference/avatax/rest/v2/methods/MultiDocument/VoidMultiDocumentTransaction"
+}

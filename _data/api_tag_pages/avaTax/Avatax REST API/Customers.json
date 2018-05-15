@@ -1,0 +1,12 @@
+{
+    "home": "api-reference/avatax/rest/v2/methods",
+    "CreateCustomers": "/api-reference/avatax/rest/v2/methods/Customers/CreateCustomers",
+    "DeleteCustomer": "/api-reference/avatax/rest/v2/methods/Customers/DeleteCustomer",
+    "GetCustomer": "/api-reference/avatax/rest/v2/methods/Customers/GetCustomer",
+    "LinkCertificatesToCustomer": "/api-reference/avatax/rest/v2/methods/Customers/LinkCertificatesToCustomer",
+    "ListCertificatesForCustomer": "/api-reference/avatax/rest/v2/methods/Customers/ListCertificatesForCustomer",
+    "ListValidCertificatesForCustomer": "/api-reference/avatax/rest/v2/methods/Customers/ListValidCertificatesForCustomer",
+    "QueryCustomers": "/api-reference/avatax/rest/v2/methods/Customers/QueryCustomers",
+    "UnlinkCertificatesFromCustomer": "/api-reference/avatax/rest/v2/methods/Customers/UnlinkCertificatesFromCustomer",
+    "UpdateCustomer": "/api-reference/avatax/rest/v2/methods/Customers/UpdateCustomer"
+}
